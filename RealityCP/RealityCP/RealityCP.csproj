@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7C667635-04F2-40C1-859D-EEE0791B21D9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RealityCP</RootNamespace>
+    <AssemblyName>RealityCP</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="build.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="build.Designer.cs">
+      <DependentUpon>build.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cleanup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cleanup.Designer.cs">
+      <DependentUpon>cleanup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dbsetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dbsetup.Designer.cs">
+      <DependentUpon>dbsetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="msgae.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="msgae.Designer.cs">
+      <DependentUpon>msgae.cs</DependentUpon>
+    </Compile>
+    <Compile Include="message.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="message.Designer.cs">
+      <DependentUpon>message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sqlinfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sqlinfo.Designer.cs">
+      <DependentUpon>sqlinfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu.Designer.cs">
+      <DependentUpon>menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="setup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="setup.Designer.cs">
+      <DependentUpon>setup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vehicles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vehicles.Designer.cs">
+      <DependentUpon>vehicles.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="build.resx">
+      <DependentUpon>build.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cleanup.resx">
+      <DependentUpon>cleanup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dbsetup.resx">
+      <DependentUpon>dbsetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="message.resx">
+      <DependentUpon>message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="msgae.resx">
+      <DependentUpon>msgae.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sqlinfo.resx">
+      <DependentUpon>sqlinfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu.resx">
+      <DependentUpon>menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="setup.resx">
+      <DependentUpon>setup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vehicles.resx">
+      <DependentUpon>vehicles.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

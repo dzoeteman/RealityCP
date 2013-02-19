@@ -1,0 +1,8 @@
+c:\users\deniz\documents\visual studio 2010\Projects\TestForms\TestForms\bin\Debug\TestForms.exe
+c:\users\deniz\documents\visual studio 2010\Projects\TestForms\TestForms\bin\Debug\TestForms.pdb
+c:\users\deniz\documents\visual studio 2010\Projects\TestForms\TestForms\obj\x86\Debug\TestForms.Form1.resources
+c:\users\deniz\documents\visual studio 2010\Projects\TestForms\TestForms\obj\x86\Debug\TestForms.Properties.Resources.resources
+c:\users\deniz\documents\visual studio 2010\Projects\TestForms\TestForms\obj\x86\Debug\TestForms.csproj.GenerateResource.Cache
+c:\users\deniz\documents\visual studio 2010\Projects\TestForms\TestForms\obj\x86\Debug\TestForms.exe
+c:\users\deniz\documents\visual studio 2010\Projects\TestForms\TestForms\obj\x86\Debug\TestForms.pdb
+c:\users\deniz\documents\visual studio 2010\Projects\TestForms\TestForms\obj\x86\Debug\TestForms.Form2.resources
