@@ -22,28 +22,28 @@ namespace RealityCP
             switch (comboBox1.Text)
             {
                 case "Reality Main (req.)":
-                    Updates.cmdLine("/C db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL);
+                    Updates.cmdLine("/C perl db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL);
                     break;
                 case "Buildings":
-                    Updates.cmdLine("/C db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityBuildings --version 0.01");
+                    Updates.cmdLine("/C perl db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityBuildings --version 0.01");
                     break;
                 case "Messaging":
-                    Updates.cmdLine("/C db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityMessaging --version 0.01");
+                    Updates.cmdLine("/C pelr db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityMessaging --version 0.01");
                     break;
                 case "Custom Inventory":
-                    Updates.cmdLine("/C db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityInvCust --version 0.02");
+                    Updates.cmdLine("/C perl db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityInvCust --version 0.02");
                     break;
                 case "DayZ+":
-                    Updates.cmdLine("/C db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityDayzPlus --version 0.01");
+                    Updates.cmdLine("/C perl db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityDayzPlus --version 0.01");
                     break;
                 case "Thirsk":
-                    Updates.cmdLine("/C db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityThirsk --version 0.01");
+                    Updates.cmdLine("/C perl db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityThirsk --version 0.01");
                     break;
                 case "Thirsk Winter":
-                    Updates.cmdLine("/C db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityThirskWinter --version 0.01");
+                    Updates.cmdLine("/C perl db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityThirskWinter --version 0.01");
                     break;
                 case "Lingor (Skaro)":
-                    Updates.cmdLine("/C db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealitySkaroLingor --version 0.01");
+                    Updates.cmdLine("/C perl db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealitySkaroLingor --version 0.01");
                     break;
                 default:
                     MessageBox.Show("No option selected.");
@@ -81,7 +81,7 @@ namespace RealityCP
             }
             if (worldadd != "0")
             {
-                Updates.cmdLine("/C db_utility.pl addinstance " + worldadd + "--host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL);
+                Updates.cmdLine("/C perl db_utility.pl addinstance " + worldadd + "--host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL);
             }
         }
 
@@ -94,14 +94,14 @@ namespace RealityCP
             }
             else
             {
-                Updates.cmdLine("/C db_utility.pl deleteinstance " + textBox1.Text + "--host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL);
+                Updates.cmdLine("/C perl db_utility.pl deleteinstance " + textBox1.Text + "--host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL);
             }
         }
 
         // Bliss migration button
         private void button5_Click(object sender, EventArgs e)
         {
-            Updates.cmdLine("/C db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityMigrate --version 0.01");
+            Updates.cmdLine("/C perl db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityMigrate --version 0.01");
         }
 
         // Back button

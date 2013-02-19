@@ -81,7 +81,7 @@ namespace RealityCP
                         // Build
                         System.Diagnostics.Process.Start("CMD.exe", "/C build.pl --clean");
                         System.Threading.Thread.Sleep(1000);
-                        Updates.cmdLine("/C build.pl --world " + worldbuild + " --instance " + textBox1.Text + " " + buildings + " " + carepkg + " " + dayzplus + " " + invcust + " " + killmsg + " " + msg + " " + wrecks + " " + ssZeds + " " + celle);
+                        Updates.cmdLine("/C perl build.pl --world " + worldbuild + " --instance " + textBox1.Text + " " + buildings + " " + carepkg + " " + dayzplus + " " + invcust + " " + killmsg + " " + msg + " " + wrecks + " " + ssZeds + " " + celle);
                     }
                 }
                 else

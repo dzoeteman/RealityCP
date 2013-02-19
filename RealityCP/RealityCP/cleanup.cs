@@ -21,7 +21,7 @@ namespace RealityCP
         {
             if (textBox1.Text != "Instance" & string.IsNullOrEmpty(textBox1.Text) == false)
             {
-                Updates.cmdLine("/C db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text + " --cleanup damaged");
+                Updates.cmdLine("/C perl db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text + " --cleanup damaged");
             }
             else
             {
@@ -34,7 +34,7 @@ namespace RealityCP
         {
             if (textBox1.Text != "Instance" & string.IsNullOrEmpty(textBox1.Text) == false)
             {
-                Updates.cmdLine("/C db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text + " --cleanup tents");
+                Updates.cmdLine("/C perl db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text + " --cleanup tents");
             }
             else
             {
@@ -47,7 +47,7 @@ namespace RealityCP
         {
             if (textBox1.Text != "Instance" & string.IsNullOrEmpty(textBox1.Text) == false)
             {
-                Updates.cmdLine("/C db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text + " --cleanup bounds");
+                Updates.cmdLine("/C perl db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text + " --cleanup bounds");
             }
             else
             {
@@ -62,7 +62,7 @@ namespace RealityCP
             {
                 if (textBox3.Text != "Days to clean" & string.IsNullOrEmpty(textBox3.Text) == false)
                 {
-                    Updates.cmdLine("/C db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text + " --cleandead " + textBox3.Text);
+                    Updates.cmdLine("/C perl db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text + " --cleandead " + textBox3.Text);
                 }
                 else
                 {
@@ -80,7 +80,7 @@ namespace RealityCP
         {
             if (textBox1.Text != "Instance" & string.IsNullOrEmpty(textBox1.Text) == false)
             {
-                Updates.cmdLine("/C db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text + " --cleanup all");
+                Updates.cmdLine("/C perl db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text + " --cleanup all");
             }
             else
             {
@@ -95,7 +95,7 @@ namespace RealityCP
             {
                 if (textBox2.Text != "Clean Item(s)" & string.IsNullOrEmpty(textBox2.Text) == false)
                 {
-                    Updates.cmdLine("/C db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text + " --cleanitem " + textBox2.Text);
+                    Updates.cmdLine("/C perl db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text + " --cleanitem " + textBox2.Text);
                 }
                 else
                 {
@@ -111,7 +111,7 @@ namespace RealityCP
         // Clean Temp button
         private void button7_Click(object sender, EventArgs e)
         {
-            Updates.cmdLine("/C build.pl --clean");
+            Updates.cmdLine("/C perl build.pl --clean");
         }
 
         // Back button

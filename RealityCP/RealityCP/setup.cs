@@ -45,6 +45,13 @@ namespace RealityCP
             this.Hide();
         }
 
+        // Update BE scripts button
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Updates.cmdLine("/C perl update_scripts.pl ./util/dayz_config/Battleye");
+            MessageBox.Show("BattlEye scripts are updated. Rebuild your server package to get the filters.");
+        }
+
         // Back button
         private void button4_Click(object sender, EventArgs e)
         {

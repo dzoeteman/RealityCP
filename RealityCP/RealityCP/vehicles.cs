@@ -21,7 +21,7 @@ namespace RealityCP
         {
             if (textBox1.Text != "Instance" & string.IsNullOrEmpty(textBox1.Text) == false)
             {
-                Updates.cmdLine("/C db_spawn_vehicles.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text);
+                Updates.cmdLine("/C perl db_spawn_vehicles.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text);
             }
             else
             {
@@ -34,7 +34,7 @@ namespace RealityCP
         {
             if (textBox1.Text != "Instance" & string.IsNullOrEmpty(textBox1.Text) == false)
             {
-                Updates.cmdLine("/C db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text + " --itemdistr");
+                Updates.cmdLine("/C perl db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text + " --itemdistr");
             }
             else
             {
