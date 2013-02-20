@@ -28,7 +28,7 @@ namespace RealityCP
                     Updates.cmdLine("/C perl db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityBuildings --version 0.01");
                     break;
                 case "Messaging":
-                    Updates.cmdLine("/C pelr db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityMessaging --version 0.01");
+                    Updates.cmdLine("/C perl db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityMessaging --version 0.01");
                     break;
                 case "Custom Inventory":
                     Updates.cmdLine("/C perl db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityInvCust --version 0.02");
@@ -44,6 +44,9 @@ namespace RealityCP
                     break;
                 case "Lingor (Skaro)":
                     Updates.cmdLine("/C perl db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealitySkaroLingor --version 0.01");
+                    break;
+                case "Oring":
+                    Updates.cmdLine("/C perl db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityOring --version 0.01");
                     break;
                 default:
                     MessageBox.Show("No option selected.");
@@ -74,6 +77,9 @@ namespace RealityCP
                     break;
                 case "Lingor (Skaro)":
                     worldadd = "skaro.lingor";
+                    break;
+                case "Oring":
+                    worldadd = "oring";
                     break;
                 default:
                     MessageBox.Show("No option selected.");

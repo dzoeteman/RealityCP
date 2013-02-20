@@ -46,6 +46,9 @@ namespace RealityCP
                     case "DayZ+":
                         worldbuild = "dayzplus";
                         break;
+                    case "Oring":
+                        worldbuild = "oring";
+                        break;
                 }
 
                 // Check if world is chosen
@@ -61,6 +64,7 @@ namespace RealityCP
                     string wrecks = "";
                     string celle = "";
                     string dayzplus = "";
+                    string oring = "";
                     if (checkedListBox1.GetItemChecked(0) == true) buildings = "--with-buildings";
                     if (checkedListBox1.GetItemChecked(1) == true) carepkg = "--with-carepkgs";
                     if (checkedListBox1.GetItemChecked(2) == true) invcust = "--with-invcust";
@@ -70,6 +74,7 @@ namespace RealityCP
                     if (checkedListBox1.GetItemChecked(6) == true) wrecks = "--with-wrecks";
                     if (worldbuild == "mbg_celle2") celle = "--with-mbg_celle2";
                     if (worldbuild == "dayzplus") dayzplus = "--with-dayzplus";
+                    if (worldbuild == "oring") dayzplus = "--with-oring";
 
                     // Conflict check between messaging and ssZeds package
                     if (msg == "--with-messaging" & ssZeds == "--with-ssZeds")
@@ -81,7 +86,7 @@ namespace RealityCP
                         // Build
                         System.Diagnostics.Process.Start("CMD.exe", "/C build.pl --clean");
                         System.Threading.Thread.Sleep(1000);
-                        Updates.cmdLine("/C perl build.pl --world " + worldbuild + " --instance " + textBox1.Text + " " + buildings + " " + carepkg + " " + dayzplus + " " + invcust + " " + killmsg + " " + msg + " " + wrecks + " " + ssZeds + " " + celle);
+                    Updates.cmdLine("/C perl build.pl --world " + worldbuild + " --instance " + textBox1.Text + " " + buildings + " " + carepkg + " " + dayzplus + " " + invcust + " " + killmsg + " " + msg + " " + wrecks + " " + ssZeds + " " + celle + " " + oring);
                     }
                 }
                 else
