@@ -74,19 +74,19 @@ namespace RealityCP
                     if (checkedListBox1.GetItemChecked(6) == true) wrecks = "--with-wrecks";
                     if (worldbuild == "mbg_celle2") celle = "--with-mbg_celle2";
                     if (worldbuild == "dayzplus") dayzplus = "--with-dayzplus";
-                    if (worldbuild == "oring") dayzplus = "--with-oring";
+                    if (worldbuild == "oring") oring = "--with-oring";
 
                     // Conflict check between messaging and ssZeds package
                     if (msg == "--with-messaging" & ssZeds == "--with-ssZeds")
                     {
-                        MessageBox.Show("Messaging and ssZeds conflict eachother. Please use either or.");
+                        MessageBox.Show("Messaging and ssZeds conflict each other. Please choose one or the other.");
                     }
                     else
                     {
                         // Build
                         System.Diagnostics.Process.Start("CMD.exe", "/C build.pl --clean");
                         System.Threading.Thread.Sleep(1000);
-                    Updates.cmdLine("/C perl build.pl --world " + worldbuild + " --instance " + textBox1.Text + " " + buildings + " " + carepkg + " " + dayzplus + " " + invcust + " " + killmsg + " " + msg + " " + wrecks + " " + ssZeds + " " + celle + " " + oring);
+                        Updates.cmdLine("/C perl build.pl --world " + worldbuild + " --instance " + textBox1.Text + " " + buildings + " " + carepkg + " " + oring + " " + dayzplus + " " + invcust + " " + killmsg + " " + " " + celle + " " + msg + " " + wrecks + " " + ssZeds);
                     }
                 }
                 else
