@@ -76,7 +76,7 @@ namespace RealityCP
                     worldadd = "mbg_celle2";
                     break;
                 case "Lingor (Skaro)":
-                    worldadd = "skaro.lingor";
+                    worldadd = "lingor";
                     break;
                 case "Oring":
                     worldadd = "oring";

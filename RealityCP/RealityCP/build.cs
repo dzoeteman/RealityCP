@@ -41,7 +41,7 @@ namespace RealityCP
                         worldbuild = "mbg_celle2";
                         break;
                     case "Lingor (Skaro)":
-                        worldbuild = "skaro.lingor";
+                        worldbuild = "lingor";
                         break;
                     case "DayZ+":
                         worldbuild = "dayzplus";
