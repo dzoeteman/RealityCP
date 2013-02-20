@@ -79,6 +79,7 @@
             "Thirsk Winter",
             "Celle",
             "Lingor (Skaro)",
+            "Oring",
             "DayZ+"});
             this.comboBox1.Location = new System.Drawing.Point(76, 68);
             this.comboBox1.Name = "comboBox1";
