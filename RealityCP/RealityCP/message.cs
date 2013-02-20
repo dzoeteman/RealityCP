@@ -39,7 +39,7 @@ namespace RealityCP
         // Delete Message button
         private void button4_Click(object sender, EventArgs e)
         {
-            Updates.cmdLine("/C db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox3.Text + " messages del " + textBox2.Text);
+            Updates.cmdLine("/C perl db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox3.Text + " messages del " + textBox2.Text);
         }
 
         // Back button

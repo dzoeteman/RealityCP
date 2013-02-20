@@ -103,7 +103,8 @@
             "DayZ+",
             "Thirsk",
             "Thirsk Winter",
-            "Lingor (Skaro)"});
+            "Lingor (Skaro)",
+            "Oring"});
             this.comboBox1.Location = new System.Drawing.Point(91, 86);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(100, 21);
@@ -174,7 +175,8 @@
             "Thirsk",
             "Thirsk Winter",
             "Celle",
-            "Lingor (Skaro)"});
+            "Lingor (Skaro)",
+            "Oring"});
             this.comboBox2.Location = new System.Drawing.Point(91, 113);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(100, 21);
