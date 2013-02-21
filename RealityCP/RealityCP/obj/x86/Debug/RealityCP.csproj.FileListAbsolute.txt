@@ -35,3 +35,4 @@ C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\obj\x86
 C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\obj\x86\Debug\RealityCP.setup.resources
 C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\obj\x86\Debug\RealityCP.vehicles.resources
 C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\obj\x86\Debug\RealityCP.csproj.GenerateResource.Cache
+C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\bin\Debug\MySql.Data.dll

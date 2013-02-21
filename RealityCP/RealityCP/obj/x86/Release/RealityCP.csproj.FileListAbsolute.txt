@@ -1,0 +1,17 @@
+C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\bin\Release\RealityCP.exe.config
+C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\bin\Release\RealityCP.exe
+C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\bin\Release\RealityCP.pdb
+C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\bin\Release\MySql.Data.dll
+C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\obj\x86\Release\RealityCP.build.resources
+C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\obj\x86\Release\RealityCP.cleanup.resources
+C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\obj\x86\Release\RealityCP.dbsetup.resources
+C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\obj\x86\Release\RealityCP.message.resources
+C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\obj\x86\Release\RealityCP.msgae.resources
+C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\obj\x86\Release\RealityCP.sqlinfo.resources
+C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\obj\x86\Release\RealityCP.menu.resources
+C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\obj\x86\Release\RealityCP.Properties.Resources.resources
+C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\obj\x86\Release\RealityCP.setup.resources
+C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\obj\x86\Release\RealityCP.vehicles.resources
+C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\obj\x86\Release\RealityCP.csproj.GenerateResource.Cache
+C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\obj\x86\Release\RealityCP.exe
+C:\Users\deniz\Documents\Visual Studio 2010\Projects\RealityCP\RealityCP\obj\x86\Release\RealityCP.pdb

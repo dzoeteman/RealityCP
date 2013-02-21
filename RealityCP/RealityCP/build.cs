@@ -79,7 +79,7 @@ namespace RealityCP
                     if (worldbuild == "mbg_celle2") celle = "--with-mbg_celle2";
                     if (worldbuild == "dayzplus") dayzplus = "--with-dayzplus";
                     if (worldbuild == "oring") oring = "--with-oring";
-                    if (worldbuild == "oring") namalsk = "--with-namalsk";
+                    if (worldbuild == "namalsk") namalsk = "--with-namalsk";
 
                     // Conflict check between messaging and ssZeds package
                     if (msg == "--with-messaging" & ssZeds == "--with-ssZeds")
@@ -91,7 +91,7 @@ namespace RealityCP
                         // Build
                         System.Diagnostics.Process.Start("CMD.exe", "/C build.pl --clean");
                         System.Threading.Thread.Sleep(1000);
-                        Updates.cmdLine("/C perl build.pl --world " + worldbuild + " --instance " + textBox1.Text + " " + buildings + " " + carepkg + " " + oring + " " + dayzplus + " " + invcust + " " + killmsg + " " + " " + celle + " " + msg + " " + wrecks + " " + " " + namalsk + " " + ssZeds);
+                        Updates.cmdLine("/C perl build.pl --world " + worldbuild + " --instance " + textBox1.Text + " " + buildings + " " + carepkg + " " + oring + " " + dayzplus + " " + invcust + " " + killmsg + " " + " " + celle + " " + msg + " " + namalsk + " " + wrecks + " " + " " + ssZeds);
                     }
                 }
                 else
