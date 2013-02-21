@@ -48,6 +48,9 @@ namespace RealityCP
                 case "Oring":
                     Updates.cmdLine("/C perl db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityOring --version 0.01");
                     break;
+                case "Namalsk":
+                    Updates.cmdLine("/C perl db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityNamalsk --version 0.01");
+                    break;
                 default:
                     MessageBox.Show("No option selected.");
                     break;
