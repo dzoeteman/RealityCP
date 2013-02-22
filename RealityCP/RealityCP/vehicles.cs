@@ -11,6 +11,7 @@ namespace RealityCP
 {
     public partial class vehicles : Form
     {
+        public static bool vehSpawnbox = false;
         public vehicles()
         {
             InitializeComponent();
@@ -21,7 +22,18 @@ namespace RealityCP
         {
             if (textBox1.Text != "Instance" & string.IsNullOrEmpty(textBox1.Text) == false)
             {
-                Updates.cmdLine("/C perl db_spawn_vehicles.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text);
+                if (!vehSpawnbox)
+                {
+                    if (MessageBox.Show("Have you cleaned up your vehicles lately? If not, no vehicles might spawn.", "Continue", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        Updates.cmdLine("/C perl db_spawn_vehicles.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text);
+                    }
+                    vehSpawnbox = true;
+                }
+                else
+                {
+                    Updates.cmdLine("/C perl db_spawn_vehicles.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text);
+                }
             }
             else
             {
