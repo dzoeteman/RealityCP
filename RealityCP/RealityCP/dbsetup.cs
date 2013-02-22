@@ -84,6 +84,9 @@ namespace RealityCP
                 case "Oring":
                     worldadd = "oring";
                     break;
+                case "Namalsk":
+                    worldadd = "namalsk";
+                    break;
                 default:
                     MessageBox.Show("No option selected.");
                     break;
