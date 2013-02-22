@@ -42,9 +42,6 @@ namespace RealityCP
                 case "Thirsk Winter":
                     Updates.cmdLine("/C perl db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityThirskWinter --version 0.01");
                     break;
-                case "Lingor (Skaro)":
-                    Updates.cmdLine("/C perl db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealitySkaroLingor --version 0.01");
-                    break;
                 case "Oring":
                     Updates.cmdLine("/C perl db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityOring --version 0.01");
                     break;
@@ -77,9 +74,6 @@ namespace RealityCP
                     break;
                 case "Celle":
                     worldadd = "mbg_celle2";
-                    break;
-                case "Lingor (Skaro)":
-                    worldadd = "lingor";
                     break;
                 case "Oring":
                     worldadd = "oring";

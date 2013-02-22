@@ -175,7 +175,6 @@
             "Thirsk",
             "Thirsk Winter",
             "Celle",
-            "Lingor (Skaro)",
             "Oring",
             "Namalsk",
             "DayZ+"});
