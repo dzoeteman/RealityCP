@@ -18,40 +18,61 @@ namespace RealityCP
 
         }
 
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+
+
+        private void menu_Load(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.menuBuildBtn, "This button with take you to the build control panel.");
+            ToolTip1.SetToolTip(this.menuVehiclesBtn, "This button with take you to the vehicle control panel.");
+            ToolTip1.SetToolTip(this.menuCleanupBtn, "This button with take you to the cleanup control panel.");
+            ToolTip1.SetToolTip(this.menuMessagesBtn, "This button with take you to the messages control panel.");
+            ToolTip1.SetToolTip(this.menuSetupBtn, "This button with take you to the setup control panel.");
+            ToolTip1.SetToolTip(this.menuExitBtn, "This will take you back to the main menu of the program.");
+        }
+
+
         // Build button
-        private void button1_Click(object sender, EventArgs e)
+        private void menuBuildBtn_Click(object sender, EventArgs e)
         {
             build bui = new build();
             bui.Show();
             this.Hide();
         }
 
+
         // Vehicles/Items button
-        private void button2_Click(object sender, EventArgs e)
+        private void menuVehiclesBtn_Click(object sender, EventArgs e)
         {
             vehicles veh = new vehicles();
             veh.Show();
             this.Hide();
         }
 
-        // Cleanup button
-        private void button3_Click(object sender, EventArgs e)
-        {
-            cleanup cln = new cleanup();
-            cln.Show();
-            this.Hide();
-        }
-
         // Messages button
-        private void button4_Click(object sender, EventArgs e)
+        private void menuMessagesBtn_Click(object sender, EventArgs e)
         {
             message msg = new message();
             msg.Show();
             this.Hide();
         }
 
+        // Cleanup button
+        private void menuCleanupBtn_Click(object sender, EventArgs e)
+        {
+            cleanup cln = new cleanup();
+            cln.Show();
+            this.Hide();
+        }
+
+
         // Setup button
-        private void button5_Click(object sender, EventArgs e)
+        private void menuSetupBtn_Click(object sender, EventArgs e)
         {
             setup setUp = new setup();
             setUp.Show();
@@ -59,20 +80,14 @@ namespace RealityCP
         }
 
         // Exit button
-        private void button6_Click(object sender, EventArgs e)
+        private void menuExitBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        protected override void OnFormClosing(FormClosingEventArgs e)
+        private void menu_KeyDown(object sender, KeyEventArgs e)
         {
-            Application.Exit();
-        }
 
-        private void menu_Load(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
-            ToolTip1.SetToolTip(this.menuExitBtn, "This will take you back to the main menu of the program.");
         }
 
     }

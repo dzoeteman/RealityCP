@@ -15,9 +15,28 @@ namespace RealityCP
         {
             InitializeComponent();
         }
+        
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void dbsetup_Load(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.importSchemaList, "This is a list of all currently supported schemas for this application version.");
+            ToolTip1.SetToolTip(this.addInstanceList, "This is a list of all of the existing worlds that this application supports. This is used to add an instance for the particular world to your database.");
+            ToolTip1.SetToolTip(this.removeInstanceText, "This is the instance that you would like to remove from the database.");
+            ToolTip1.SetToolTip(this.migrateFromBlissBtn, "This will assist you in migrating from Bliss to Reality, this is required for all future funtionality and you will not be supported without this being done. We will assist you in the event that you are having issues with upgrade.");
+            ToolTip1.SetToolTip(this.importSchemaBtn, "This button will import the schema that you have selected for the world on the left.");
+            ToolTip1.SetToolTip(this.addInstanceBtn, "This will add an instance for the world that you have selected on the left.");
+            ToolTip1.SetToolTip(this.removeInstanceBtn, "This will remove the instance number that you have entered on the left.");
+            ToolTip1.SetToolTip(this.dbsetupBackBtn, "This will take you back to the main menu of the program.");
+
+        }
 
         // Database scheme button
-        private void button1_Click(object sender, EventArgs e)
+        private void importSchemaBtn_Click(object sender, EventArgs e)
         {
             switch (importSchemaList.Text)
             {
@@ -58,7 +77,7 @@ namespace RealityCP
         }
 
         // Add Instance button
-        private void button3_Click(object sender, EventArgs e)
+        private void addInstanceBtn_Click(object sender, EventArgs e)
         {
             string worldadd = "0";
             switch (addInstanceList.Text)
@@ -93,12 +112,13 @@ namespace RealityCP
             }
             if (worldadd != "0")
             {
-                Updates.cmdLine("/C perl db_utility.pl addinstance " + worldadd + "--host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL);
+                Updates.cmdLine("/C perl db_utility.pl addinstance " + worldadd + " --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL);
             }
         }
 
+
         // Remove Instance button
-        private void button2_Click(object sender, EventArgs e)
+        private void removeInstanceBtn_Click(object sender, EventArgs e)
         {
             if (removeInstanceText.Text == "")
             {
@@ -106,41 +126,23 @@ namespace RealityCP
             }
             else
             {
-                Updates.cmdLine("/C perl db_utility.pl deleteinstance " + removeInstanceText.Text + "--host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL);
+                Updates.cmdLine("/C perl db_utility.pl deleteinstance " + removeInstanceText.Text + " --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL);
             }
         }
 
         // Bliss migration button
-        private void button5_Click(object sender, EventArgs e)
+        private void migrateFromBlissBtn_Click(object sender, EventArgs e)
         {
             Updates.cmdLine("/C perl db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityMigrate --version 0.01");
         }
 
+
         // Back button
-        private void button4_Click(object sender, EventArgs e)
+        private void dbsetupBackBtn_Click(object sender, EventArgs e)
         {
             setup setUp = new setup();
             setUp.Show();
             this.Hide();
-        }
-
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void dbsetup_Load(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
-            ToolTip1.SetToolTip(this.importSchemaList, "This is a list of all currently supported schemas for this application version.");
-            ToolTip1.SetToolTip(this.addInstanceList, "This is a list of all of the existing worlds that this application supports. This is used to add an instance for the particular world to your database.");
-            ToolTip1.SetToolTip(this.removeInstanceText, "This is the instance that you would like to remove from the database.");
-            ToolTip1.SetToolTip(this.migrateFromBlissBtn, "This will assist you in migrating from Bliss to Reality, this is required for all future funtionality and you will not be supported without this being done. We will assist you in the event that you are having issues with upgrade.");
-            ToolTip1.SetToolTip(this.importSchemaBtn, "This button will import the schema that you have selected for the world on the left.");
-            ToolTip1.SetToolTip(this.addInstanceBtn, "This will add an instance for the world that you have selected on the left.");
-            ToolTip1.SetToolTip(this.removeInstanceBtn, "This will remove the instance number that you have entered on the left.");
-            ToolTip1.SetToolTip(this.dbsetupBackBtn, "This will take you back to the main menu of the program.");
-
         }
 
     }

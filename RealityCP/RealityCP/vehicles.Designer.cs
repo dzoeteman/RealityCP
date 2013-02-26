@@ -64,7 +64,7 @@
             this.vehiclesSpawnVehiclesBtn.TabIndex = 9;
             this.vehiclesSpawnVehiclesBtn.Text = "Spawn Vehicles";
             this.vehiclesSpawnVehiclesBtn.UseVisualStyleBackColor = true;
-            this.vehiclesSpawnVehiclesBtn.Click += new System.EventHandler(this.button1_Click);
+            this.vehiclesSpawnVehiclesBtn.Click += new System.EventHandler(this.vehiclesSpawnVehiclesBtn_Click);
             // 
             // vehiclesItemBtn
             // 
@@ -74,7 +74,7 @@
             this.vehiclesItemBtn.TabIndex = 10;
             this.vehiclesItemBtn.Text = "Item Distribution";
             this.vehiclesItemBtn.UseVisualStyleBackColor = true;
-            this.vehiclesItemBtn.Click += new System.EventHandler(this.button2_Click);
+            this.vehiclesItemBtn.Click += new System.EventHandler(this.vehiclesItemBtn_Click);
             // 
             // vehiclesBackbtn
             // 
@@ -84,7 +84,7 @@
             this.vehiclesBackbtn.TabIndex = 11;
             this.vehiclesBackbtn.Text = "Back";
             this.vehiclesBackbtn.UseVisualStyleBackColor = true;
-            this.vehiclesBackbtn.Click += new System.EventHandler(this.button3_Click);
+            this.vehiclesBackbtn.Click += new System.EventHandler(this.vehiclesBackbtn_Click);
             // 
             // vehiclesInstanceText
             // 
