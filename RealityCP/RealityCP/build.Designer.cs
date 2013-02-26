@@ -140,7 +140,7 @@
             this.buildBuildBtn.TabIndex = 10;
             this.buildBuildBtn.Text = "Build!";
             this.buildBuildBtn.UseVisualStyleBackColor = true;
-            this.buildBuildBtn.Click += new System.EventHandler(this.button1_Click);
+            this.buildBuildBtn.Click += new System.EventHandler(this.buildBuildBtn_Click);
             // 
             // buildBackBtn
             // 
@@ -150,7 +150,7 @@
             this.buildBackBtn.TabIndex = 11;
             this.buildBackBtn.Text = "Back";
             this.buildBackBtn.UseVisualStyleBackColor = true;
-            this.buildBackBtn.Click += new System.EventHandler(this.button2_Click);
+            this.buildBackBtn.Click += new System.EventHandler(this.buildBackBtn_Click);
             // 
             // buildHelpBtn
             // 
@@ -160,7 +160,7 @@
             this.buildHelpBtn.TabIndex = 12;
             this.buildHelpBtn.Text = "?";
             this.buildHelpBtn.UseVisualStyleBackColor = true;
-            this.buildHelpBtn.Click += new System.EventHandler(this.button3_Click);
+            this.buildHelpBtn.Click += new System.EventHandler(this.buildHelpBtn_Click);
             // 
             // build
             // 

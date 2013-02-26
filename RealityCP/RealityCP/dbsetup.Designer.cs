@@ -70,7 +70,7 @@
             this.importSchemaBtn.TabIndex = 9;
             this.importSchemaBtn.Text = "Go";
             this.importSchemaBtn.UseVisualStyleBackColor = true;
-            this.importSchemaBtn.Click += new System.EventHandler(this.button1_Click);
+            this.importSchemaBtn.Click += new System.EventHandler(this.importSchemaBtn_Click);
             // 
             // label3
             // 
@@ -89,7 +89,7 @@
             this.dbsetupBackBtn.TabIndex = 13;
             this.dbsetupBackBtn.Text = "Back";
             this.dbsetupBackBtn.UseVisualStyleBackColor = true;
-            this.dbsetupBackBtn.Click += new System.EventHandler(this.button4_Click);
+            this.dbsetupBackBtn.Click += new System.EventHandler(this.dbsetupBackBtn_Click);
             // 
             // importSchemaList
             // 
@@ -143,7 +143,7 @@
             this.removeInstanceBtn.TabIndex = 21;
             this.removeInstanceBtn.Text = "Go";
             this.removeInstanceBtn.UseVisualStyleBackColor = true;
-            this.removeInstanceBtn.Click += new System.EventHandler(this.button2_Click);
+            this.removeInstanceBtn.Click += new System.EventHandler(this.removeInstanceBtn_Click);
             // 
             // addInstanceBtn
             // 
@@ -153,7 +153,7 @@
             this.addInstanceBtn.TabIndex = 22;
             this.addInstanceBtn.Text = "Go";
             this.addInstanceBtn.UseVisualStyleBackColor = true;
-            this.addInstanceBtn.Click += new System.EventHandler(this.button3_Click);
+            this.addInstanceBtn.Click += new System.EventHandler(this.addInstanceBtn_Click);
             // 
             // migrateFromBlissBtn
             // 
@@ -163,7 +163,7 @@
             this.migrateFromBlissBtn.TabIndex = 23;
             this.migrateFromBlissBtn.Text = "Migrate from Bliss";
             this.migrateFromBlissBtn.UseVisualStyleBackColor = true;
-            this.migrateFromBlissBtn.Click += new System.EventHandler(this.button5_Click);
+            this.migrateFromBlissBtn.Click += new System.EventHandler(this.migrateFromBlissBtn_Click);
             // 
             // addInstanceList
             // 

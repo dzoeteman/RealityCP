@@ -17,8 +17,10 @@ namespace RealityCP
             InitializeComponent();
         }
 
+
+
         // Spawn Vehicles button
-        private void button1_Click(object sender, EventArgs e)
+        private void vehiclesSpawnVehiclesBtn_Click(object sender, EventArgs e)
         {
             if (vehiclesInstanceText.Text != "Instance" & string.IsNullOrEmpty(vehiclesInstanceText.Text) == false)
             {
@@ -41,9 +43,11 @@ namespace RealityCP
             }
         }
 
+
         // Item Distr. button
-        private void button2_Click(object sender, EventArgs e)
+        private void vehiclesItemBtn_Click(object sender, EventArgs e)
         {
+
             if (vehiclesInstanceText.Text != "Instance" & string.IsNullOrEmpty(vehiclesInstanceText.Text) == false)
             {
                 Updates.cmdLine("/C perl db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + vehiclesInstanceText.Text + " --itemdistr");
@@ -52,16 +56,16 @@ namespace RealityCP
             {
                 MessageBox.Show("Instance number not filled in.");
             }
-        }
 
+
+        }
         // Back button
-        private void button3_Click(object sender, EventArgs e)
+        private void vehiclesBackbtn_Click(object sender, EventArgs e)
         {
-            menu mainMenu = new menu();
+                    menu mainMenu = new menu();
             mainMenu.Show();
             this.Hide();
         }
-
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             Application.Exit();
@@ -70,8 +74,12 @@ namespace RealityCP
         private void vehicles_Load(object sender, EventArgs e)
         {
             System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.vehiclesInstanceText, "Insert the instance ID to spawn all vehicles on.");
+            ToolTip1.SetToolTip(this.vehiclesSpawnVehiclesBtn, "Click this button to spawn all vehicles on the instance entered above.");
+            ToolTip1.SetToolTip(this.vehiclesItemBtn, "Get a list of all instance distribution by instance ID.");
             ToolTip1.SetToolTip(this.vehiclesBackbtn, "This will take you back to the main menu of the program.");
         }
 
     }
 }
+

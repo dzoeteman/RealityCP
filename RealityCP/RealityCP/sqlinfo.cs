@@ -19,26 +19,95 @@ namespace RealityCP
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Updates.UpdateSetting("host", textBox1.Text);
-            Updates.UpdateSetting("port", textBox2.Text);
-            Updates.UpdateSetting("user", textBox3.Text);
-            Updates.UpdateSetting("pass", textBox4.Text);
-            Updates.UpdateSetting("name", textBox5.Text);
-            MessageBox.Show("Settings saved! Please restart the application.");
-            Application.Exit();
-        }
-
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             Application.Exit();
         }
 
+        int up;
+        int down;
+        int left;
+        int right;
+        int b;
+        int a;
+
         private void sqlinfo_Load(object sender, EventArgs e)
         {
+            up = 0;
+            down = 0;
+            left = 0;
+            right = 0;
+            b = 0;
+            a = 0;
             System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
             ToolTip1.SetToolTip(this.sqlinfoContinueBtn, "This will save the settings and exit the application.");
+            ToolTip1.SetToolTip(this.sqlinfoIPText, "Please enter your servers mysql IP here.");
+            ToolTip1.SetToolTip(this.sqlinfoPortText, "Please enter your servers mysql Port here.");
+            ToolTip1.SetToolTip(this.sqlinfoUserText, "Please enter your servers mysql User here.");
+            ToolTip1.SetToolTip(this.sqlinfoPasswordText, "Please enter your servers mysql Password here.");
+            ToolTip1.SetToolTip(this.sqlinfoDatabaseText, "Please enter your servers mysql Database name here.");
+        }
+
+        private void sqlinfoContinueBtn_Click(object sender, EventArgs e)
+        {
+            Updates.UpdateSetting("host", sqlinfoIPText.Text);
+            Updates.UpdateSetting("port", sqlinfoPortText.Text);
+            Updates.UpdateSetting("user", sqlinfoUserText.Text);
+            Updates.UpdateSetting("pass", sqlinfoPasswordText.Text);
+            Updates.UpdateSetting("name", sqlinfoDatabaseText.Text);
+            MessageBox.Show("Settings saved! Please restart the application.");
+            Application.Exit();
+        }
+
+        private void sqlinfoIPText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                up++;
+                if (up > 2)
+                { up = 0; }
+            }
+
+            if (e.KeyCode == Keys.Down)
+            {
+                down++;
+                if (down > 2)
+                { down = 0; }
+
+            }
+
+            if (e.KeyCode == Keys.Left)
+            {
+                left++;
+                if (left > 2)
+                { left = 0; }
+            }
+
+            if (e.KeyCode == Keys.Right)
+            {
+                right++;
+                if (right > 2)
+                { right = 0; }
+            }
+
+            if (e.KeyCode == Keys.B)
+            {
+                b++;
+                if (b > 2)
+                { b = 0; }
+            }
+
+            if (e.KeyCode == Keys.A)
+            {
+                a++;
+                if (a > 2)
+                { a = 0; }
+            }
+            if (up == 2 & down == 2 & left == 2 & right == 2 & b == 1 & a == 1)
+            {
+                MessageBox.Show("Stop playing R4Z0RMod, get ready to play some Blacksheep!");
+            }
+          
         }
     }
 }
