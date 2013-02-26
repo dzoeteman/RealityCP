@@ -32,11 +32,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.sqlinfoIPText = new System.Windows.Forms.TextBox();
+            this.sqlinfoPortText = new System.Windows.Forms.TextBox();
+            this.sqlinfoUserText = new System.Windows.Forms.TextBox();
+            this.sqlinfoPasswordText = new System.Windows.Forms.TextBox();
+            this.sqlinfoDatabaseText = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -73,44 +73,45 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "To use the Control Panel, please\r\n enter your MySQL details.";
             // 
-            // textBox1
+            // sqlinfoIPText
             // 
-            this.textBox1.Location = new System.Drawing.Point(114, 102);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 10;
-            this.textBox1.Text = "127.0.0.1";
+            this.sqlinfoIPText.Location = new System.Drawing.Point(114, 102);
+            this.sqlinfoIPText.Name = "sqlinfoIPText";
+            this.sqlinfoIPText.Size = new System.Drawing.Size(100, 20);
+            this.sqlinfoIPText.TabIndex = 10;
+            this.sqlinfoIPText.Text = "127.0.0.1";
+            this.sqlinfoIPText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.sqlinfoIPText_KeyDown);
             // 
-            // textBox2
+            // sqlinfoPortText
             // 
-            this.textBox2.Location = new System.Drawing.Point(114, 128);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 11;
-            this.textBox2.Text = "3306";
+            this.sqlinfoPortText.Location = new System.Drawing.Point(114, 128);
+            this.sqlinfoPortText.Name = "sqlinfoPortText";
+            this.sqlinfoPortText.Size = new System.Drawing.Size(100, 20);
+            this.sqlinfoPortText.TabIndex = 11;
+            this.sqlinfoPortText.Text = "3306";
             // 
-            // textBox3
+            // sqlinfoUserText
             // 
-            this.textBox3.Location = new System.Drawing.Point(114, 154);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 12;
-            this.textBox3.Text = "root";
+            this.sqlinfoUserText.Location = new System.Drawing.Point(114, 154);
+            this.sqlinfoUserText.Name = "sqlinfoUserText";
+            this.sqlinfoUserText.Size = new System.Drawing.Size(100, 20);
+            this.sqlinfoUserText.TabIndex = 12;
+            this.sqlinfoUserText.Text = "root";
             // 
-            // textBox4
+            // sqlinfoPasswordText
             // 
-            this.textBox4.Location = new System.Drawing.Point(114, 180);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PasswordChar = '*';
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 13;
+            this.sqlinfoPasswordText.Location = new System.Drawing.Point(114, 180);
+            this.sqlinfoPasswordText.Name = "sqlinfoPasswordText";
+            this.sqlinfoPasswordText.PasswordChar = '*';
+            this.sqlinfoPasswordText.Size = new System.Drawing.Size(100, 20);
+            this.sqlinfoPasswordText.TabIndex = 13;
             // 
-            // textBox5
+            // sqlinfoDatabaseText
             // 
-            this.textBox5.Location = new System.Drawing.Point(114, 206);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 18;
+            this.sqlinfoDatabaseText.Location = new System.Drawing.Point(114, 206);
+            this.sqlinfoDatabaseText.Name = "sqlinfoDatabaseText";
+            this.sqlinfoDatabaseText.Size = new System.Drawing.Size(100, 20);
+            this.sqlinfoDatabaseText.TabIndex = 18;
             // 
             // label4
             // 
@@ -165,7 +166,7 @@
             this.sqlinfoContinueBtn.TabIndex = 20;
             this.sqlinfoContinueBtn.Text = "Continue";
             this.sqlinfoContinueBtn.UseVisualStyleBackColor = true;
-            this.sqlinfoContinueBtn.Click += new System.EventHandler(this.button1_Click);
+            this.sqlinfoContinueBtn.Click += new System.EventHandler(this.sqlinfoContinueBtn_Click);
             // 
             // sqlinfo
             // 
@@ -174,15 +175,15 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.sqlinfoContinueBtn);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.sqlinfoDatabaseText);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.sqlinfoPortText);
+            this.Controls.Add(this.sqlinfoIPText);
+            this.Controls.Add(this.sqlinfoUserText);
+            this.Controls.Add(this.sqlinfoPasswordText);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -204,11 +205,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox sqlinfoIPText;
+        private System.Windows.Forms.TextBox sqlinfoPortText;
+        private System.Windows.Forms.TextBox sqlinfoUserText;
+        private System.Windows.Forms.TextBox sqlinfoPasswordText;
+        private System.Windows.Forms.TextBox sqlinfoDatabaseText;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;

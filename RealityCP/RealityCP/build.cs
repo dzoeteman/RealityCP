@@ -16,11 +16,51 @@ namespace RealityCP
             InitializeComponent();
         }
 
+        
+
+
+
+
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void build_Load(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.buildWorldListCombo, "This is the list of all worlds that are currently supported by this latest version of the tool.");
+            ToolTip1.SetToolTip(this.buildInstanceText, "This is the instance number for the world that will be added above. This will be added to the mission and appended to all files built.");
+            ToolTip1.SetToolTip(this.buildPackagesListBox, "This is a list of all of the packages that are available, when building you will be warned if you have selected packages not supported by this world.");
+            ToolTip1.SetToolTip(this.buildBuildBtn, "This button will build the world and packages that you have selected above.");
+            ToolTip1.SetToolTip(this.buildBackBtn, "This will take you back to the main menu of the program.");
+            ToolTip1.SetToolTip(this.buildInstanceText, "Type your instance number that you would like here. This will be automatically merged into the world that is being built.");
+            
+        }
+
+        private void buildWorldListCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                buildInstanceText.Text = "";
+                foreach (int i in buildPackagesListBox.CheckedIndices)
+                {
+                    buildPackagesListBox.SetItemCheckState(i, CheckState.Unchecked);
+                }
+            }
+            catch (Exception up)
+            { 
+                //throw up;
+            }
+        }
+
+
         // Build button
-        private void button1_Click(object sender, EventArgs e)
+        private void buildBuildBtn_Click(object sender, EventArgs e)
         {
             // Check if instance number chosen
-            if(string.IsNullOrEmpty(buildInstanceText.Text) == false)
+            if (string.IsNullOrEmpty(buildInstanceText.Text) == false)
             {
                 string worldbuild = "none";
                 switch (buildWorldListCombo.Text)
@@ -97,7 +137,7 @@ namespace RealityCP
                             Updates.cmdLine("/C perl build.pl --world " + worldbuild + " " + worldtobuild + " --instance " + buildInstanceText.Text + " " + buildings + " " + carepkg + " " + invcust + " " + killmsg + " " + msg + " " + wrecks + " " + " " + ssZeds);
                         }
                         catch (Exception up)
-                        { 
+                        {
                             //throw up; 
                         }
                     }
@@ -113,51 +153,20 @@ namespace RealityCP
             }
         }
 
-        // Packages info button
-        private void button3_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Buildings: buildings placed on the map through the database.\nCarepackages: random loot packages around the map.\nCustom Inventory: allows to set a custom inventory when spawned.\nKillmessages: a message when someone has been killed.\nMessaging: scheduled rcon messages\nDisable server zombies: Disable server-side simulation of zombies (may improve server FPS)\nWrecks: random wrecks around the map with loot");
-        }
 
         // Back button
-        private void button2_Click(object sender, EventArgs e)
+        private void buildBackBtn_Click(object sender, EventArgs e)
         {
             menu mainMenu = new menu();
             mainMenu.Show();
             this.Hide();
         }
 
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
 
-        private void build_Load(object sender, EventArgs e)
+        // Packages info button
+        private void buildHelpBtn_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
-            ToolTip1.SetToolTip(this.buildWorldListCombo, "This is the list of all worlds that are currently supported by this latest version of the tool.");
-            ToolTip1.SetToolTip(this.buildInstanceText, "This is the instance number for the world that will be added above. This will be added to the mission and appended to all files built.");
-            ToolTip1.SetToolTip(this.buildPackagesListBox, "This is a list of all of the packages that are available, when building you will be warned if you have selected packages not supported by this world.");
-            ToolTip1.SetToolTip(this.buildBuildBtn, "This button will build the world and packages that you have selected above.");
-            ToolTip1.SetToolTip(this.buildBackBtn, "This will take you back to the main menu of the program.");
-            ToolTip1.SetToolTip(this.buildInstanceText, "Type your instance number that you would like here. This will be automatically merged into the world that is being built.");
-            
-        }
-
-        private void buildWorldListCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                buildInstanceText.Text = "";
-                foreach (int i in buildPackagesListBox.CheckedIndices)
-                {
-                    buildPackagesListBox.SetItemCheckState(i, CheckState.Unchecked);
-                }
-            }
-            catch (Exception up)
-            { 
-                //throw up;
-            }
+            MessageBox.Show("Buildings: buildings placed on the map through the database.\nCarepackages: random loot packages around the map.\nCustom Inventory: allows to set a custom inventory when spawned.\nKillmessages: a message when someone has been killed.\nMessaging: scheduled rcon messages\nDisable server zombies: Disable server-side simulation of zombies (may improve server FPS)\nWrecks: random wrecks around the map with loot");
         }
 
     }

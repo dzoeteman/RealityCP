@@ -29,66 +29,66 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(menu));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.menuBuildBtn = new System.Windows.Forms.Button();
+            this.menuVehiclesBtn = new System.Windows.Forms.Button();
+            this.menuCleanupBtn = new System.Windows.Forms.Button();
+            this.menuMessagesBtn = new System.Windows.Forms.Button();
+            this.menuSetupBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.menuExitBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // menuBuildBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.button1.Location = new System.Drawing.Point(74, 83);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 60);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Build";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.menuBuildBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.menuBuildBtn.Location = new System.Drawing.Point(74, 83);
+            this.menuBuildBtn.Name = "menuBuildBtn";
+            this.menuBuildBtn.Size = new System.Drawing.Size(140, 60);
+            this.menuBuildBtn.TabIndex = 0;
+            this.menuBuildBtn.Text = "Build";
+            this.menuBuildBtn.UseVisualStyleBackColor = true;
+            this.menuBuildBtn.Click += new System.EventHandler(this.menuBuildBtn_Click);
             // 
-            // button2
+            // menuVehiclesBtn
             // 
-            this.button2.Location = new System.Drawing.Point(38, 149);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Vehicles/Items";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.menuVehiclesBtn.Location = new System.Drawing.Point(38, 149);
+            this.menuVehiclesBtn.Name = "menuVehiclesBtn";
+            this.menuVehiclesBtn.Size = new System.Drawing.Size(97, 23);
+            this.menuVehiclesBtn.TabIndex = 1;
+            this.menuVehiclesBtn.Text = "Vehicles/Items";
+            this.menuVehiclesBtn.UseVisualStyleBackColor = true;
+            this.menuVehiclesBtn.Click += new System.EventHandler(this.menuVehiclesBtn_Click);
             // 
-            // button3
+            // menuCleanupBtn
             // 
-            this.button3.Location = new System.Drawing.Point(153, 149);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(97, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Cleanup";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.menuCleanupBtn.Location = new System.Drawing.Point(153, 149);
+            this.menuCleanupBtn.Name = "menuCleanupBtn";
+            this.menuCleanupBtn.Size = new System.Drawing.Size(97, 23);
+            this.menuCleanupBtn.TabIndex = 2;
+            this.menuCleanupBtn.Text = "Cleanup";
+            this.menuCleanupBtn.UseVisualStyleBackColor = true;
+            this.menuCleanupBtn.Click += new System.EventHandler(this.menuCleanupBtn_Click);
             // 
-            // button4
+            // menuMessagesBtn
             // 
-            this.button4.Location = new System.Drawing.Point(38, 178);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(97, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Messages";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.menuMessagesBtn.Location = new System.Drawing.Point(38, 178);
+            this.menuMessagesBtn.Name = "menuMessagesBtn";
+            this.menuMessagesBtn.Size = new System.Drawing.Size(97, 23);
+            this.menuMessagesBtn.TabIndex = 3;
+            this.menuMessagesBtn.Text = "Messages";
+            this.menuMessagesBtn.UseVisualStyleBackColor = true;
+            this.menuMessagesBtn.Click += new System.EventHandler(this.menuMessagesBtn_Click);
             // 
-            // button5
+            // menuSetupBtn
             // 
-            this.button5.Location = new System.Drawing.Point(153, 178);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(97, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Setup / DB";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.menuSetupBtn.Location = new System.Drawing.Point(153, 178);
+            this.menuSetupBtn.Name = "menuSetupBtn";
+            this.menuSetupBtn.Size = new System.Drawing.Size(97, 23);
+            this.menuSetupBtn.TabIndex = 4;
+            this.menuSetupBtn.Text = "Setup / DB";
+            this.menuSetupBtn.UseVisualStyleBackColor = true;
+            this.menuSetupBtn.Click += new System.EventHandler(this.menuSetupBtn_Click);
             // 
             // label1
             // 
@@ -117,7 +117,7 @@
             this.menuExitBtn.TabIndex = 7;
             this.menuExitBtn.Text = "Exit";
             this.menuExitBtn.UseVisualStyleBackColor = true;
-            this.menuExitBtn.Click += new System.EventHandler(this.button6_Click);
+            this.menuExitBtn.Click += new System.EventHandler(this.menuExitBtn_Click);
             // 
             // menu
             // 
@@ -129,11 +129,11 @@
             this.Controls.Add(this.menuExitBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.menuSetupBtn);
+            this.Controls.Add(this.menuMessagesBtn);
+            this.Controls.Add(this.menuCleanupBtn);
+            this.Controls.Add(this.menuVehiclesBtn);
+            this.Controls.Add(this.menuBuildBtn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -142,6 +142,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reality Control Panel";
             this.Load += new System.EventHandler(this.menu_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.menu_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,11 +150,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button menuBuildBtn;
+        private System.Windows.Forms.Button menuVehiclesBtn;
+        private System.Windows.Forms.Button menuCleanupBtn;
+        private System.Windows.Forms.Button menuMessagesBtn;
+        private System.Windows.Forms.Button menuSetupBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button menuExitBtn;

@@ -33,13 +33,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.messageListMessagesBtn = new System.Windows.Forms.Button();
+            this.messageSearchText = new System.Windows.Forms.TextBox();
+            this.messageAddMessageBtn = new System.Windows.Forms.Button();
+            this.messageDeleteBtn = new System.Windows.Forms.Button();
+            this.messageMessageIDtext = new System.Windows.Forms.TextBox();
             this.messageBackBtn = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.messageInstanceText = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label2
@@ -61,51 +61,51 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Reality Control Panel";
             // 
-            // button1
+            // messageListMessagesBtn
             // 
-            this.button1.Location = new System.Drawing.Point(155, 70);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "List Messages";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.messageListMessagesBtn.Location = new System.Drawing.Point(155, 70);
+            this.messageListMessagesBtn.Name = "messageListMessagesBtn";
+            this.messageListMessagesBtn.Size = new System.Drawing.Size(95, 23);
+            this.messageListMessagesBtn.TabIndex = 9;
+            this.messageListMessagesBtn.Text = "List Messages";
+            this.messageListMessagesBtn.UseVisualStyleBackColor = true;
+            this.messageListMessagesBtn.Click += new System.EventHandler(this.messageListMessagesBtn_Click);
             // 
-            // textBox1
+            // messageSearchText
             // 
-            this.textBox1.Location = new System.Drawing.Point(23, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(126, 20);
-            this.textBox1.TabIndex = 11;
-            this.textBox1.Text = "Search phrase (optional)";
+            this.messageSearchText.Location = new System.Drawing.Point(23, 72);
+            this.messageSearchText.Name = "messageSearchText";
+            this.messageSearchText.Size = new System.Drawing.Size(126, 20);
+            this.messageSearchText.TabIndex = 11;
+            this.messageSearchText.Text = "Search phrase (optional)";
             // 
-            // button2
+            // messageAddMessageBtn
             // 
-            this.button2.Location = new System.Drawing.Point(23, 113);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(227, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Add/Edit Message";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.messageAddMessageBtn.Location = new System.Drawing.Point(23, 113);
+            this.messageAddMessageBtn.Name = "messageAddMessageBtn";
+            this.messageAddMessageBtn.Size = new System.Drawing.Size(227, 23);
+            this.messageAddMessageBtn.TabIndex = 12;
+            this.messageAddMessageBtn.Text = "Add/Edit Message";
+            this.messageAddMessageBtn.UseVisualStyleBackColor = true;
+            this.messageAddMessageBtn.Click += new System.EventHandler(this.messageAddMessageBtn_Click);
             // 
-            // button4
+            // messageDeleteBtn
             // 
-            this.button4.Location = new System.Drawing.Point(155, 169);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(95, 23);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Delete Message";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.messageDeleteBtn.Location = new System.Drawing.Point(155, 169);
+            this.messageDeleteBtn.Name = "messageDeleteBtn";
+            this.messageDeleteBtn.Size = new System.Drawing.Size(95, 23);
+            this.messageDeleteBtn.TabIndex = 14;
+            this.messageDeleteBtn.Text = "Delete Message";
+            this.messageDeleteBtn.UseVisualStyleBackColor = true;
+            this.messageDeleteBtn.Click += new System.EventHandler(this.messageDeleteBtn_Click);
             // 
-            // textBox2
+            // messageMessageIDtext
             // 
-            this.textBox2.Location = new System.Drawing.Point(23, 183);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(126, 20);
-            this.textBox2.TabIndex = 15;
-            this.textBox2.Text = "Message ID";
+            this.messageMessageIDtext.Location = new System.Drawing.Point(23, 183);
+            this.messageMessageIDtext.Name = "messageMessageIDtext";
+            this.messageMessageIDtext.Size = new System.Drawing.Size(126, 20);
+            this.messageMessageIDtext.TabIndex = 15;
+            this.messageMessageIDtext.Text = "Message ID";
             // 
             // messageBackBtn
             // 
@@ -115,28 +115,28 @@
             this.messageBackBtn.TabIndex = 16;
             this.messageBackBtn.Text = "Back";
             this.messageBackBtn.UseVisualStyleBackColor = true;
-            this.messageBackBtn.Click += new System.EventHandler(this.button5_Click);
+            this.messageBackBtn.Click += new System.EventHandler(this.messageBackBtn_Click);
             // 
-            // textBox3
+            // messageInstanceText
             // 
-            this.textBox3.Location = new System.Drawing.Point(23, 157);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(126, 20);
-            this.textBox3.TabIndex = 18;
-            this.textBox3.Text = "Instance";
+            this.messageInstanceText.Location = new System.Drawing.Point(23, 157);
+            this.messageInstanceText.Name = "messageInstanceText";
+            this.messageInstanceText.Size = new System.Drawing.Size(126, 20);
+            this.messageInstanceText.TabIndex = 18;
+            this.messageInstanceText.Text = "Instance";
             // 
             // message
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.messageInstanceText);
             this.Controls.Add(this.messageBackBtn);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.messageMessageIDtext);
+            this.Controls.Add(this.messageDeleteBtn);
+            this.Controls.Add(this.messageAddMessageBtn);
+            this.Controls.Add(this.messageSearchText);
+            this.Controls.Add(this.messageListMessagesBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -157,12 +157,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button messageListMessagesBtn;
+        private System.Windows.Forms.TextBox messageSearchText;
+        private System.Windows.Forms.Button messageAddMessageBtn;
+        private System.Windows.Forms.Button messageDeleteBtn;
+        private System.Windows.Forms.TextBox messageMessageIDtext;
         private System.Windows.Forms.Button messageBackBtn;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox messageInstanceText;
     }
 }
