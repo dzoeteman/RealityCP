@@ -31,6 +31,12 @@ namespace RealityCP
             this.Close();
         }
 
+        private void msgae_Load(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.msgaeCloseBtn, "This will take you back to the main menu of the program.");
+        }
+
     }
 
 }

@@ -30,17 +30,17 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.importSchemaBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dbsetupBackBtn = new System.Windows.Forms.Button();
+            this.importSchemaList = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.removeInstanceText = new System.Windows.Forms.TextBox();
+            this.removeInstanceBtn = new System.Windows.Forms.Button();
+            this.addInstanceBtn = new System.Windows.Forms.Button();
+            this.migrateFromBlissBtn = new System.Windows.Forms.Button();
+            this.addInstanceList = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label2
@@ -62,15 +62,15 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Reality Control Panel";
             // 
-            // button1
+            // importSchemaBtn
             // 
-            this.button1.Location = new System.Drawing.Point(197, 86);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Go";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.importSchemaBtn.Location = new System.Drawing.Point(197, 86);
+            this.importSchemaBtn.Name = "importSchemaBtn";
+            this.importSchemaBtn.Size = new System.Drawing.Size(75, 23);
+            this.importSchemaBtn.TabIndex = 9;
+            this.importSchemaBtn.Text = "Go";
+            this.importSchemaBtn.UseVisualStyleBackColor = true;
+            this.importSchemaBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -81,21 +81,21 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Import scheme";
             // 
-            // button4
+            // dbsetupBackBtn
             // 
-            this.button4.Location = new System.Drawing.Point(12, 226);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(256, 23);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Back";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.dbsetupBackBtn.Location = new System.Drawing.Point(12, 226);
+            this.dbsetupBackBtn.Name = "dbsetupBackBtn";
+            this.dbsetupBackBtn.Size = new System.Drawing.Size(256, 23);
+            this.dbsetupBackBtn.TabIndex = 13;
+            this.dbsetupBackBtn.Text = "Back";
+            this.dbsetupBackBtn.UseVisualStyleBackColor = true;
+            this.dbsetupBackBtn.Click += new System.EventHandler(this.button4_Click);
             // 
-            // comboBox1
+            // importSchemaList
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.importSchemaList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.importSchemaList.FormattingEnabled = true;
+            this.importSchemaList.Items.AddRange(new object[] {
             "Reality Main (req.)",
             "Buildings",
             "Messaging",
@@ -105,10 +105,10 @@
             "Thirsk Winter",
             "Namalsk",
             "Oring"});
-            this.comboBox1.Location = new System.Drawing.Point(91, 86);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 14;
+            this.importSchemaList.Location = new System.Drawing.Point(91, 86);
+            this.importSchemaList.Name = "importSchemaList";
+            this.importSchemaList.Size = new System.Drawing.Size(100, 21);
+            this.importSchemaList.TabIndex = 14;
             // 
             // label4
             // 
@@ -128,77 +128,78 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "Remove Instance";
             // 
-            // textBox1
+            // removeInstanceText
             // 
-            this.textBox1.Location = new System.Drawing.Point(91, 139);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 19;
+            this.removeInstanceText.Location = new System.Drawing.Point(91, 139);
+            this.removeInstanceText.Name = "removeInstanceText";
+            this.removeInstanceText.Size = new System.Drawing.Size(100, 20);
+            this.removeInstanceText.TabIndex = 19;
             // 
-            // button2
+            // removeInstanceBtn
             // 
-            this.button2.Location = new System.Drawing.Point(197, 137);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Go";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.removeInstanceBtn.Location = new System.Drawing.Point(197, 137);
+            this.removeInstanceBtn.Name = "removeInstanceBtn";
+            this.removeInstanceBtn.Size = new System.Drawing.Size(75, 23);
+            this.removeInstanceBtn.TabIndex = 21;
+            this.removeInstanceBtn.Text = "Go";
+            this.removeInstanceBtn.UseVisualStyleBackColor = true;
+            this.removeInstanceBtn.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // addInstanceBtn
             // 
-            this.button3.Location = new System.Drawing.Point(197, 111);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 22;
-            this.button3.Text = "Go";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.addInstanceBtn.Location = new System.Drawing.Point(197, 111);
+            this.addInstanceBtn.Name = "addInstanceBtn";
+            this.addInstanceBtn.Size = new System.Drawing.Size(75, 23);
+            this.addInstanceBtn.TabIndex = 22;
+            this.addInstanceBtn.Text = "Go";
+            this.addInstanceBtn.UseVisualStyleBackColor = true;
+            this.addInstanceBtn.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button5
+            // migrateFromBlissBtn
             // 
-            this.button5.Location = new System.Drawing.Point(87, 166);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(185, 23);
-            this.button5.TabIndex = 23;
-            this.button5.Text = "Migrate from Bliss";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.migrateFromBlissBtn.Location = new System.Drawing.Point(87, 166);
+            this.migrateFromBlissBtn.Name = "migrateFromBlissBtn";
+            this.migrateFromBlissBtn.Size = new System.Drawing.Size(185, 23);
+            this.migrateFromBlissBtn.TabIndex = 23;
+            this.migrateFromBlissBtn.Text = "Migrate from Bliss";
+            this.migrateFromBlissBtn.UseVisualStyleBackColor = true;
+            this.migrateFromBlissBtn.Click += new System.EventHandler(this.button5_Click);
             // 
-            // comboBox2
+            // addInstanceList
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.addInstanceList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.addInstanceList.FormattingEnabled = true;
+            this.addInstanceList.Items.AddRange(new object[] {
             "Chernarus",
             "Utes",
             "Thirsk",
             "Thirsk Winter",
             "Celle",
+            "Lingor (Skaro)",
             "Oring",
             "Namalsk",
             "DayZ+"});
-            this.comboBox2.Location = new System.Drawing.Point(91, 113);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(100, 21);
-            this.comboBox2.TabIndex = 24;
+            this.addInstanceList.Location = new System.Drawing.Point(91, 113);
+            this.addInstanceList.Name = "addInstanceList";
+            this.addInstanceList.Size = new System.Drawing.Size(100, 21);
+            this.addInstanceList.TabIndex = 24;
             // 
             // dbsetup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.addInstanceList);
+            this.Controls.Add(this.migrateFromBlissBtn);
+            this.Controls.Add(this.addInstanceBtn);
+            this.Controls.Add(this.removeInstanceBtn);
+            this.Controls.Add(this.removeInstanceText);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.importSchemaList);
+            this.Controls.Add(this.dbsetupBackBtn);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.importSchemaBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
@@ -207,6 +208,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reality Control Panel";
+            this.Load += new System.EventHandler(this.dbsetup_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,16 +218,16 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button importSchemaBtn;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button dbsetupBackBtn;
+        private System.Windows.Forms.ComboBox importSchemaList;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox removeInstanceText;
+        private System.Windows.Forms.Button removeInstanceBtn;
+        private System.Windows.Forms.Button addInstanceBtn;
+        private System.Windows.Forms.Button migrateFromBlissBtn;
+        private System.Windows.Forms.ComboBox addInstanceList;
     }
 }
