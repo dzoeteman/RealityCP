@@ -66,7 +66,6 @@ namespace RealityCP
                 up++;
                 if (up > 2)
                 { up = 0; }
-                textBox1.Text = Convert.ToString(e.KeyCode + up );
             }
 
             if (e.KeyCode == Keys.Down)
@@ -74,7 +73,7 @@ namespace RealityCP
                 down++;
                 if (down > 2)
                 { down = 0; }
-                textBox1.Text = Convert.ToString(e.KeyCode + down);
+
             }
 
             if (e.KeyCode == Keys.Left)
@@ -82,7 +81,6 @@ namespace RealityCP
                 left++;
                 if (left > 2)
                 { left = 0; }
-                textBox1.Text = Convert.ToString(e.KeyCode + left);
             }
 
             if (e.KeyCode == Keys.Right)
@@ -90,7 +88,6 @@ namespace RealityCP
                 right++;
                 if (right > 2)
                 { right = 0; }
-                textBox1.Text = Convert.ToString(e.KeyCode + right);
             }
 
             if (e.KeyCode == Keys.B)
@@ -98,7 +95,6 @@ namespace RealityCP
                 b++;
                 if (b > 2)
                 { b = 0; }
-                textBox1.Text = Convert.ToString(e.KeyCode + b);
             }
 
             if (e.KeyCode == Keys.A)
@@ -106,17 +102,12 @@ namespace RealityCP
                 a++;
                 if (a > 2)
                 { a = 0; }
-                textBox1.Text = Convert.ToString(e.KeyCode + a);
             }
             if (up == 2 & down == 2 & left == 2 & right == 2 & b == 1 & a == 1)
             {
-                MessageBox.Show("Stop Playing R4Z0RMod, go play DayzMod!");
+                MessageBox.Show("Stop playing R4Z0RMod, get ready to play some Blacksheep!");
             }
-            else
-            {
-                textBox1.Text = Convert.ToString(up + " " + down + " " + left  + " " + right  + " " + b  + " " + a );
-            }
-           
+          
         }
     }
 }
