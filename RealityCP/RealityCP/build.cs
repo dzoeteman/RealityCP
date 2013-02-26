@@ -93,7 +93,7 @@ namespace RealityCP
                         worldbuild = "namalsk";
                         break;
                     case "i44.Chernarus":
-                        worldbuild = "i44";
+                        worldbuild = "i44.chernarus";
                         break;
                 }
 
@@ -120,12 +120,16 @@ namespace RealityCP
                     if (worldbuild == "dayzplus") worldtobuild = "--with-dayzplus";
                     if (worldbuild == "oring") worldtobuild = "--with-oring";
                     if (worldbuild == "namalsk") worldtobuild = "--with-namalsk";
-                    if (worldbuild == "i44") worldtobuild = "--with-i44.chernarus";
+                    if (worldbuild == "i44.chernarus") worldtobuild = "--with-i44.chernarus";
 
                     // Conflict check between messaging and ssZeds package
                     if (msg == "--with-messaging" & ssZeds == "--with-ssZeds")
                     {
                         MessageBox.Show("Messaging and ssZeds conflict each other. Please choose one or the other.");
+                    }
+                    else if (worldbuild == "i44.chernarus" & buildings == "--with-buildings" | carepkg == "--with-carepkgs" | invcust == "--with-invcust" | killmsg == "--with-killmsgs" | msg == "--with-messaging" | ssZeds == "--with-ssZeds" | wrecks == "--with-wrecks")
+                    {
+                        MessageBox.Show("i44 isn't known to work with any of the current box, this is currently an unsupported feature.");
                     }
                     else
                     {
