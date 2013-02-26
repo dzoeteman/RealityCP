@@ -31,17 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cleanup));
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.cleanTentsBtn = new System.Windows.Forms.Button();
+            this.cleanBoundsBtn = new System.Windows.Forms.Button();
+            this.cleanAllBtn = new System.Windows.Forms.Button();
+            this.cleanDeadBtn = new System.Windows.Forms.Button();
+            this.cleanItemsBtn = new System.Windows.Forms.Button();
+            this.cleanDamageBtn = new System.Windows.Forms.Button();
+            this.cleanTempBtn = new System.Windows.Forms.Button();
+            this.cleanupBackBtn = new System.Windows.Forms.Button();
+            this.cleanupInstanceText = new System.Windows.Forms.TextBox();
+            this.cleanupItemText = new System.Windows.Forms.TextBox();
+            this.cleanupDaysText = new System.Windows.Forms.TextBox();
+            this.removeVehiclesBtn = new System.Windows.Forms.Button();
+            this.removeDeployedBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -63,126 +65,148 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Reality Control Panel";
             // 
-            // button1
+            // cleanTentsBtn
             // 
-            this.button1.Location = new System.Drawing.Point(50, 177);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Clean Tents";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.cleanTentsBtn.Location = new System.Drawing.Point(21, 185);
+            this.cleanTentsBtn.Name = "cleanTentsBtn";
+            this.cleanTentsBtn.Size = new System.Drawing.Size(108, 23);
+            this.cleanTentsBtn.TabIndex = 9;
+            this.cleanTentsBtn.Text = "Clean Tents";
+            this.cleanTentsBtn.UseVisualStyleBackColor = true;
+            this.cleanTentsBtn.Click += new System.EventHandler(this.cleanTentsBtn_Click);
             // 
-            // button2
+            // cleanBoundsBtn
             // 
-            this.button2.Location = new System.Drawing.Point(143, 148);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Clean Bounds";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.cleanBoundsBtn.Location = new System.Drawing.Point(142, 159);
+            this.cleanBoundsBtn.Name = "cleanBoundsBtn";
+            this.cleanBoundsBtn.Size = new System.Drawing.Size(108, 23);
+            this.cleanBoundsBtn.TabIndex = 10;
+            this.cleanBoundsBtn.Text = "Clean Bounds";
+            this.cleanBoundsBtn.UseVisualStyleBackColor = true;
+            this.cleanBoundsBtn.Click += new System.EventHandler(this.cleanBoundsBtn_Click);
             // 
-            // button3
+            // cleanAllBtn
             // 
-            this.button3.Location = new System.Drawing.Point(143, 67);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(87, 23);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Clean All";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.cleanAllBtn.Location = new System.Drawing.Point(142, 55);
+            this.cleanAllBtn.Name = "cleanAllBtn";
+            this.cleanAllBtn.Size = new System.Drawing.Size(108, 23);
+            this.cleanAllBtn.TabIndex = 11;
+            this.cleanAllBtn.Text = "Clean All";
+            this.cleanAllBtn.UseVisualStyleBackColor = true;
+            this.cleanAllBtn.Click += new System.EventHandler(this.cleanAllBtn_Click);
             // 
-            // button4
+            // cleanDeadBtn
             // 
-            this.button4.Location = new System.Drawing.Point(143, 94);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(87, 23);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Clean Dead";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.cleanDeadBtn.Location = new System.Drawing.Point(142, 81);
+            this.cleanDeadBtn.Name = "cleanDeadBtn";
+            this.cleanDeadBtn.Size = new System.Drawing.Size(108, 23);
+            this.cleanDeadBtn.TabIndex = 12;
+            this.cleanDeadBtn.Text = "Clean Dead";
+            this.cleanDeadBtn.UseVisualStyleBackColor = true;
+            this.cleanDeadBtn.Click += new System.EventHandler(this.cleanDeadBtn_Click);
             // 
-            // button5
+            // cleanItemsBtn
             // 
-            this.button5.Location = new System.Drawing.Point(143, 123);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(87, 23);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "Clean Item(s)";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.cleanItemsBtn.Location = new System.Drawing.Point(142, 107);
+            this.cleanItemsBtn.Name = "cleanItemsBtn";
+            this.cleanItemsBtn.Size = new System.Drawing.Size(108, 23);
+            this.cleanItemsBtn.TabIndex = 13;
+            this.cleanItemsBtn.Text = "Clean Item(s)";
+            this.cleanItemsBtn.UseVisualStyleBackColor = true;
+            this.cleanItemsBtn.Click += new System.EventHandler(this.cleanItemsBtn_Click);
             // 
-            // button6
+            // cleanDamageBtn
             // 
-            this.button6.Location = new System.Drawing.Point(50, 148);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(87, 23);
-            this.button6.TabIndex = 14;
-            this.button6.Text = "Clean Vehicles";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.cleanDamageBtn.Location = new System.Drawing.Point(21, 158);
+            this.cleanDamageBtn.Name = "cleanDamageBtn";
+            this.cleanDamageBtn.Size = new System.Drawing.Size(108, 23);
+            this.cleanDamageBtn.TabIndex = 14;
+            this.cleanDamageBtn.Text = "Clean Damage";
+            this.cleanDamageBtn.UseVisualStyleBackColor = true;
+            this.cleanDamageBtn.Click += new System.EventHandler(this.cleanDamageBtn_Click);
             // 
-            // button7
+            // cleanTempBtn
             // 
-            this.button7.Location = new System.Drawing.Point(143, 177);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(87, 23);
-            this.button7.TabIndex = 15;
-            this.button7.Text = "Clean Temp";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.cleanTempBtn.Location = new System.Drawing.Point(142, 185);
+            this.cleanTempBtn.Name = "cleanTempBtn";
+            this.cleanTempBtn.Size = new System.Drawing.Size(108, 23);
+            this.cleanTempBtn.TabIndex = 15;
+            this.cleanTempBtn.Text = "Clean Deploy Files";
+            this.cleanTempBtn.UseVisualStyleBackColor = true;
+            this.cleanTempBtn.Click += new System.EventHandler(this.cleanTempBtn_Click);
             // 
-            // button8
+            // cleanupBackBtn
             // 
-            this.button8.Location = new System.Drawing.Point(50, 226);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(180, 23);
-            this.button8.TabIndex = 16;
-            this.button8.Text = "Back";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.cleanupBackBtn.Location = new System.Drawing.Point(57, 226);
+            this.cleanupBackBtn.Name = "cleanupBackBtn";
+            this.cleanupBackBtn.Size = new System.Drawing.Size(180, 23);
+            this.cleanupBackBtn.TabIndex = 16;
+            this.cleanupBackBtn.Text = "Back";
+            this.cleanupBackBtn.UseVisualStyleBackColor = true;
+            this.cleanupBackBtn.Click += new System.EventHandler(this.cleanupBackBtn_Click);
             // 
-            // textBox1
+            // cleanupInstanceText
             // 
-            this.textBox1.Location = new System.Drawing.Point(50, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(87, 20);
-            this.textBox1.TabIndex = 17;
-            this.textBox1.Text = "Instance";
+            this.cleanupInstanceText.Location = new System.Drawing.Point(21, 59);
+            this.cleanupInstanceText.Name = "cleanupInstanceText";
+            this.cleanupInstanceText.Size = new System.Drawing.Size(108, 20);
+            this.cleanupInstanceText.TabIndex = 17;
+            this.cleanupInstanceText.Text = "Instance";
             // 
-            // textBox2
+            // cleanupItemText
             // 
-            this.textBox2.Location = new System.Drawing.Point(50, 122);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(87, 20);
-            this.textBox2.TabIndex = 18;
-            this.textBox2.Text = "Clean Item(s)";
+            this.cleanupItemText.Location = new System.Drawing.Point(21, 107);
+            this.cleanupItemText.Name = "cleanupItemText";
+            this.cleanupItemText.Size = new System.Drawing.Size(108, 20);
+            this.cleanupItemText.TabIndex = 18;
+            this.cleanupItemText.Text = "ID";
             // 
-            // textBox3
+            // cleanupDaysText
             // 
-            this.textBox3.Location = new System.Drawing.Point(50, 96);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(87, 20);
-            this.textBox3.TabIndex = 19;
-            this.textBox3.Text = "Days to clean";
+            this.cleanupDaysText.Location = new System.Drawing.Point(21, 83);
+            this.cleanupDaysText.Name = "cleanupDaysText";
+            this.cleanupDaysText.Size = new System.Drawing.Size(108, 20);
+            this.cleanupDaysText.TabIndex = 19;
+            this.cleanupDaysText.Text = "Days to clean";
+            // 
+            // removeVehiclesBtn
+            // 
+            this.removeVehiclesBtn.Location = new System.Drawing.Point(21, 131);
+            this.removeVehiclesBtn.Name = "removeVehiclesBtn";
+            this.removeVehiclesBtn.Size = new System.Drawing.Size(108, 23);
+            this.removeVehiclesBtn.TabIndex = 21;
+            this.removeVehiclesBtn.Text = "Remove Vehicles";
+            this.removeVehiclesBtn.UseVisualStyleBackColor = true;
+            this.removeVehiclesBtn.Click += new System.EventHandler(this.removeVehiclesBtn_Click);
+            // 
+            // removeDeployedBtn
+            // 
+            this.removeDeployedBtn.Location = new System.Drawing.Point(142, 133);
+            this.removeDeployedBtn.Name = "removeDeployedBtn";
+            this.removeDeployedBtn.Size = new System.Drawing.Size(108, 23);
+            this.removeDeployedBtn.TabIndex = 20;
+            this.removeDeployedBtn.Text = "Remove Deployed";
+            this.removeDeployedBtn.UseVisualStyleBackColor = true;
+            this.removeDeployedBtn.Click += new System.EventHandler(this.removeDeployedBtn_Click);
             // 
             // cleanup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.removeVehiclesBtn);
+            this.Controls.Add(this.removeDeployedBtn);
+            this.Controls.Add(this.cleanupDaysText);
+            this.Controls.Add(this.cleanupItemText);
+            this.Controls.Add(this.cleanupInstanceText);
+            this.Controls.Add(this.cleanupBackBtn);
+            this.Controls.Add(this.cleanTempBtn);
+            this.Controls.Add(this.cleanDamageBtn);
+            this.Controls.Add(this.cleanItemsBtn);
+            this.Controls.Add(this.cleanDeadBtn);
+            this.Controls.Add(this.cleanAllBtn);
+            this.Controls.Add(this.cleanBoundsBtn);
+            this.Controls.Add(this.cleanTentsBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -192,6 +216,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reality Control Panel";
+            this.Load += new System.EventHandler(this.cleanup_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,17 +226,19 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button cleanTentsBtn;
+        private System.Windows.Forms.Button cleanBoundsBtn;
+        private System.Windows.Forms.Button cleanAllBtn;
+        private System.Windows.Forms.Button cleanDeadBtn;
+        private System.Windows.Forms.Button cleanItemsBtn;
+        private System.Windows.Forms.Button cleanDamageBtn;
+        private System.Windows.Forms.Button cleanTempBtn;
+        private System.Windows.Forms.Button cleanupBackBtn;
+        private System.Windows.Forms.TextBox cleanupInstanceText;
+        private System.Windows.Forms.TextBox cleanupItemText;
+        private System.Windows.Forms.TextBox cleanupDaysText;
+        private System.Windows.Forms.Button removeVehiclesBtn;
+        private System.Windows.Forms.Button removeDeployedBtn;
 
     }
 }

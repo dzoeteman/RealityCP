@@ -42,7 +42,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.sqlinfoContinueBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -157,22 +157,22 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "Database";
             // 
-            // button1
+            // sqlinfoContinueBtn
             // 
-            this.button1.Location = new System.Drawing.Point(114, 232);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Continue";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.sqlinfoContinueBtn.Location = new System.Drawing.Point(114, 232);
+            this.sqlinfoContinueBtn.Name = "sqlinfoContinueBtn";
+            this.sqlinfoContinueBtn.Size = new System.Drawing.Size(75, 23);
+            this.sqlinfoContinueBtn.TabIndex = 20;
+            this.sqlinfoContinueBtn.Text = "Continue";
+            this.sqlinfoContinueBtn.UseVisualStyleBackColor = true;
+            this.sqlinfoContinueBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // sqlinfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.sqlinfoContinueBtn);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label7);
@@ -193,6 +193,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reality Control Panel";
+            this.Load += new System.EventHandler(this.sqlinfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,7 +214,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button sqlinfoContinueBtn;
 
     }
 }

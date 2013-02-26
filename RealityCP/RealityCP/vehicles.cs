@@ -20,19 +20,19 @@ namespace RealityCP
         // Spawn Vehicles button
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "Instance" & string.IsNullOrEmpty(textBox1.Text) == false)
+            if (vehiclesInstanceText.Text != "Instance" & string.IsNullOrEmpty(vehiclesInstanceText.Text) == false)
             {
                 if (!vehSpawnbox)
                 {
                     if (MessageBox.Show("Have you cleaned up your vehicles lately? If not, no vehicles might spawn.", "Continue", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
-                        Updates.cmdLine("/C perl db_spawn_vehicles.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text);
+                        Updates.cmdLine("/C perl db_spawn_vehicles.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + vehiclesInstanceText.Text);
                     }
                     vehSpawnbox = true;
                 }
                 else
                 {
-                    Updates.cmdLine("/C perl db_spawn_vehicles.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text);
+                    Updates.cmdLine("/C perl db_spawn_vehicles.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + vehiclesInstanceText.Text);
                 }
             }
             else
@@ -44,9 +44,9 @@ namespace RealityCP
         // Item Distr. button
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "Instance" & string.IsNullOrEmpty(textBox1.Text) == false)
+            if (vehiclesInstanceText.Text != "Instance" & string.IsNullOrEmpty(vehiclesInstanceText.Text) == false)
             {
-                Updates.cmdLine("/C perl db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + textBox1.Text + " --itemdistr");
+                Updates.cmdLine("/C perl db_utility.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --instance " + vehiclesInstanceText.Text + " --itemdistr");
             }
             else
             {
@@ -65,6 +65,12 @@ namespace RealityCP
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void vehicles_Load(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.vehiclesBackbtn, "This will take you back to the main menu of the program.");
         }
 
     }

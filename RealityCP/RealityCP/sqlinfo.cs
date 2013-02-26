@@ -34,5 +34,11 @@ namespace RealityCP
         {
             Application.Exit();
         }
+
+        private void sqlinfo_Load(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.sqlinfoContinueBtn, "This will save the settings and exit the application.");
+        }
     }
 }

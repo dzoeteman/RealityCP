@@ -32,14 +32,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buildWorldListCombo = new System.Windows.Forms.ComboBox();
+            this.buildInstanceText = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buildPackagesListBox = new System.Windows.Forms.CheckedListBox();
+            this.buildBuildBtn = new System.Windows.Forms.Button();
+            this.buildBackBtn = new System.Windows.Forms.Button();
+            this.buildHelpBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -69,31 +69,33 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Packages";
             // 
-            // comboBox1
+            // buildWorldListCombo
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.buildWorldListCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.buildWorldListCombo.FormattingEnabled = true;
+            this.buildWorldListCombo.Items.AddRange(new object[] {
+            "Celle",
             "Chernarus",
-            "Utes",
+            "i44.Chernarus",
+            "Lingor (Skaro)",
+            "Namalsk",
+            "Oring",
             "Thirsk",
             "Thirsk Winter",
-            "Celle",
-            "Lingor (Skaro)",
-            "Oring",
-            "DayZ+",
-            "Namalsk"});
-            this.comboBox1.Location = new System.Drawing.Point(76, 68);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(174, 21);
-            this.comboBox1.TabIndex = 3;
+            "Utes",
+            ""});
+            this.buildWorldListCombo.Location = new System.Drawing.Point(76, 68);
+            this.buildWorldListCombo.Name = "buildWorldListCombo";
+            this.buildWorldListCombo.Size = new System.Drawing.Size(174, 21);
+            this.buildWorldListCombo.TabIndex = 3;
+            this.buildWorldListCombo.SelectedIndexChanged += new System.EventHandler(this.buildWorldListCombo_SelectedIndexChanged);
             // 
-            // textBox1
+            // buildInstanceText
             // 
-            this.textBox1.Location = new System.Drawing.Point(76, 95);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 20);
-            this.textBox1.TabIndex = 5;
+            this.buildInstanceText.Location = new System.Drawing.Point(76, 95);
+            this.buildInstanceText.Name = "buildInstanceText";
+            this.buildInstanceText.Size = new System.Drawing.Size(174, 20);
+            this.buildInstanceText.TabIndex = 5;
             // 
             // label4
             // 
@@ -114,10 +116,10 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Reality Control Panel";
             // 
-            // checkedListBox1
+            // buildPackagesListBox
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.buildPackagesListBox.FormattingEnabled = true;
+            this.buildPackagesListBox.Items.AddRange(new object[] {
             "Buildings",
             "Carepackages",
             "Custom Inventory",
@@ -125,54 +127,54 @@
             "Messaging",
             "Disable server zombies",
             "Wrecks"});
-            this.checkedListBox1.Location = new System.Drawing.Point(76, 124);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(174, 49);
-            this.checkedListBox1.TabIndex = 9;
+            this.buildPackagesListBox.Location = new System.Drawing.Point(76, 124);
+            this.buildPackagesListBox.Name = "buildPackagesListBox";
+            this.buildPackagesListBox.Size = new System.Drawing.Size(174, 49);
+            this.buildPackagesListBox.TabIndex = 9;
             // 
-            // button1
+            // buildBuildBtn
             // 
-            this.button1.Location = new System.Drawing.Point(76, 179);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Build!";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buildBuildBtn.Location = new System.Drawing.Point(76, 179);
+            this.buildBuildBtn.Name = "buildBuildBtn";
+            this.buildBuildBtn.Size = new System.Drawing.Size(174, 23);
+            this.buildBuildBtn.TabIndex = 10;
+            this.buildBuildBtn.Text = "Build!";
+            this.buildBuildBtn.UseVisualStyleBackColor = true;
+            this.buildBuildBtn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // buildBackBtn
             // 
-            this.button2.Location = new System.Drawing.Point(38, 226);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(212, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Back";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buildBackBtn.Location = new System.Drawing.Point(38, 226);
+            this.buildBackBtn.Name = "buildBackBtn";
+            this.buildBackBtn.Size = new System.Drawing.Size(212, 23);
+            this.buildBackBtn.TabIndex = 11;
+            this.buildBackBtn.Text = "Back";
+            this.buildBackBtn.UseVisualStyleBackColor = true;
+            this.buildBackBtn.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // buildHelpBtn
             // 
-            this.button3.Location = new System.Drawing.Point(38, 140);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(32, 23);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "?";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buildHelpBtn.Location = new System.Drawing.Point(38, 140);
+            this.buildHelpBtn.Name = "buildHelpBtn";
+            this.buildHelpBtn.Size = new System.Drawing.Size(32, 23);
+            this.buildHelpBtn.TabIndex = 12;
+            this.buildHelpBtn.Text = "?";
+            this.buildHelpBtn.UseVisualStyleBackColor = true;
+            this.buildHelpBtn.Click += new System.EventHandler(this.button3_Click);
             // 
             // build
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.buildHelpBtn);
+            this.Controls.Add(this.buildBackBtn);
+            this.Controls.Add(this.buildBuildBtn);
+            this.Controls.Add(this.buildPackagesListBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.buildInstanceText);
+            this.Controls.Add(this.buildWorldListCombo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -183,6 +185,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reality Control Panel";
+            this.Load += new System.EventHandler(this.build_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,13 +196,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox buildWorldListCombo;
+        private System.Windows.Forms.TextBox buildInstanceText;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.CheckedListBox buildPackagesListBox;
+        private System.Windows.Forms.Button buildBuildBtn;
+        private System.Windows.Forms.Button buildBackBtn;
+        private System.Windows.Forms.Button buildHelpBtn;
     }
 }

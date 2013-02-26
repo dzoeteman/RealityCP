@@ -38,7 +38,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.messageBackBtn = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -107,15 +107,15 @@
             this.textBox2.TabIndex = 15;
             this.textBox2.Text = "Message ID";
             // 
-            // button5
+            // messageBackBtn
             // 
-            this.button5.Location = new System.Drawing.Point(23, 226);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(227, 23);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "Back";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.messageBackBtn.Location = new System.Drawing.Point(23, 226);
+            this.messageBackBtn.Name = "messageBackBtn";
+            this.messageBackBtn.Size = new System.Drawing.Size(227, 23);
+            this.messageBackBtn.TabIndex = 16;
+            this.messageBackBtn.Text = "Back";
+            this.messageBackBtn.UseVisualStyleBackColor = true;
+            this.messageBackBtn.Click += new System.EventHandler(this.button5_Click);
             // 
             // textBox3
             // 
@@ -131,7 +131,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.messageBackBtn);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
@@ -146,6 +146,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reality Control Panel";
+            this.Load += new System.EventHandler(this.message_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,7 +162,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button messageBackBtn;
         private System.Windows.Forms.TextBox textBox3;
     }
 }
