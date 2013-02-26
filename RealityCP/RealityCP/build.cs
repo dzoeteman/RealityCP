@@ -20,10 +20,10 @@ namespace RealityCP
         private void button1_Click(object sender, EventArgs e)
         {
             // Check if instance number chosen
-            if(string.IsNullOrEmpty(textBox1.Text) == false)
+            if(string.IsNullOrEmpty(buildInstanceText.Text) == false)
             {
                 string worldbuild = "none";
-                switch (comboBox1.Text)
+                switch (buildWorldListCombo.Text)
                 {
                     case "Chernarus":
                         worldbuild = "chernarus";
@@ -52,6 +52,9 @@ namespace RealityCP
                     case "Namalsk":
                         worldbuild = "namalsk";
                         break;
+                    case "i44.Chernarus":
+                        worldbuild = "i44";
+                        break;
                 }
 
                 // Check if world is chosen
@@ -65,21 +68,19 @@ namespace RealityCP
                     string msg = "";
                     string ssZeds = "";
                     string wrecks = "";
-                    string celle = "";
-                    string dayzplus = "";
-                    string oring = "";
-                    string namalsk = "";
-                    if (checkedListBox1.GetItemChecked(0) == true) buildings = "--with-buildings";
-                    if (checkedListBox1.GetItemChecked(1) == true) carepkg = "--with-carepkgs";
-                    if (checkedListBox1.GetItemChecked(2) == true) invcust = "--with-invcust";
-                    if (checkedListBox1.GetItemChecked(3) == true) killmsg = "--with-killmsgs";
-                    if (checkedListBox1.GetItemChecked(4) == true) msg = "--with-messaging";
-                    if (checkedListBox1.GetItemChecked(5) == true) ssZeds = "--with-ssZeds";
-                    if (checkedListBox1.GetItemChecked(6) == true) wrecks = "--with-wrecks";
-                    if (worldbuild == "mbg_celle2") celle = "--with-mbg_celle2";
-                    if (worldbuild == "dayzplus") dayzplus = "--with-dayzplus";
-                    if (worldbuild == "oring") oring = "--with-oring";
-                    if (worldbuild == "namalsk") namalsk = "--with-namalsk";
+                    string worldtobuild = "";
+                    if (buildPackagesListBox.GetItemChecked(0) == true) buildings = "--with-buildings";
+                    if (buildPackagesListBox.GetItemChecked(1) == true) carepkg = "--with-carepkgs";
+                    if (buildPackagesListBox.GetItemChecked(2) == true) invcust = "--with-invcust";
+                    if (buildPackagesListBox.GetItemChecked(3) == true) killmsg = "--with-killmsgs";
+                    if (buildPackagesListBox.GetItemChecked(4) == true) msg = "--with-messaging";
+                    if (buildPackagesListBox.GetItemChecked(5) == true) ssZeds = "--with-ssZeds";
+                    if (buildPackagesListBox.GetItemChecked(6) == true) wrecks = "--with-wrecks";
+                    if (worldbuild == "mbg_celle2") worldtobuild = "--with-mbg_celle2";
+                    if (worldbuild == "dayzplus") worldtobuild = "--with-dayzplus";
+                    if (worldbuild == "oring") worldtobuild = "--with-oring";
+                    if (worldbuild == "namalsk") worldtobuild = "--with-namalsk";
+                    if (worldbuild == "i44") worldtobuild = "--with-i44.chernarus";
 
                     // Conflict check between messaging and ssZeds package
                     if (msg == "--with-messaging" & ssZeds == "--with-ssZeds")
@@ -88,10 +89,17 @@ namespace RealityCP
                     }
                     else
                     {
-                        // Build
-                        System.Diagnostics.Process.Start("CMD.exe", "/C build.pl --clean");
-                        System.Threading.Thread.Sleep(1000);
-                        Updates.cmdLine("/C perl build.pl --world " + worldbuild + " --instance " + textBox1.Text + " " + buildings + " " + carepkg + " " + oring + " " + dayzplus + " " + invcust + " " + killmsg + " " + " " + celle + " " + msg + " " + namalsk + " " + wrecks + " " + " " + ssZeds);
+                        try
+                        {
+                            // Build
+                            System.Diagnostics.Process.Start("CMD.exe", "/C build.pl --clean");
+                            System.Threading.Thread.Sleep(1000);
+                            Updates.cmdLine("/C perl build.pl --world " + worldbuild + " " + worldtobuild + " --instance " + buildInstanceText.Text + " " + buildings + " " + carepkg + " " + invcust + " " + killmsg + " " + msg + " " + wrecks + " " + " " + ssZeds);
+                        }
+                        catch (Exception up)
+                        { 
+                            //throw up; 
+                        }
                     }
                 }
                 else
@@ -122,6 +130,34 @@ namespace RealityCP
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void build_Load(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.buildWorldListCombo, "This is the list of all worlds that are currently supported by this latest version of the tool.");
+            ToolTip1.SetToolTip(this.buildInstanceText, "This is the instance number for the world that will be added above. This will be added to the mission and appended to all files built.");
+            ToolTip1.SetToolTip(this.buildPackagesListBox, "This is a list of all of the packages that are available, when building you will be warned if you have selected packages not supported by this world.");
+            ToolTip1.SetToolTip(this.buildBuildBtn, "This button will build the world and packages that you have selected above.");
+            ToolTip1.SetToolTip(this.buildBackBtn, "This will take you back to the main menu of the program.");
+            ToolTip1.SetToolTip(this.buildInstanceText, "Type your instance number that you would like here. This will be automatically merged into the world that is being built.");
+            
+        }
+
+        private void buildWorldListCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                buildInstanceText.Text = "";
+                foreach (int i in buildPackagesListBox.CheckedIndices)
+                {
+                    buildPackagesListBox.SetItemCheckState(i, CheckState.Unchecked);
+                }
+            }
+            catch (Exception up)
+            { 
+                //throw up;
+            }
         }
 
     }
