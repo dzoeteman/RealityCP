@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -13,14 +14,14 @@ namespace RealityCP
     {
         public build()
         {
+            
             InitializeComponent();
+
         }
 
-        
 
-
-
-
+        private List<string> worldList = new List<string>();
+        System.IO.StreamReader file;
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
@@ -29,6 +30,7 @@ namespace RealityCP
 
         private void build_Load(object sender, EventArgs e)
         {
+            setupMenu();
             System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
             ToolTip1.SetToolTip(this.buildWorldListCombo, "This is the list of all worlds that are currently supported by this latest version of the tool.");
             ToolTip1.SetToolTip(this.buildInstanceText, "This is the instance number for the world that will be added above. This will be added to the mission and appended to all files built.");
@@ -55,6 +57,133 @@ namespace RealityCP
             }
         }
 
+        class MyType
+        {
+            public string world { get; set; }
+            public string worldbuild { get; set; }
+            public string worldversion { get; set; }
+        }
+
+
+       /* private string returnWorldID(string worldname){
+            try {
+                string line;
+                file = new System.IO.StreamReader("RealityCPWorlds.cfg");
+                while ((line = file.ReadLine()) != null)
+                {
+                    var fields = line.Split(new Char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                    string world = fields[1];
+                    string version = fields[2];
+                    
+                    if (world == worldname)
+                    {
+                        return version;
+                    }
+                }
+                return "0";
+            }
+            catch (Exception up)
+            {
+                return "999";
+            }
+            
+        }*/
+
+        private string returnWorldBuild(string worldname)
+        {
+            try
+            {
+                for (int i = 0; worldList.Count > i; i++ )
+                {
+                    var fields = worldList[i].Split(new Char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                    string world = fields[1];
+                    string version = fields[2];
+
+                    if (world == worldname)
+                    {
+                        return version;
+                    }
+                }
+                return "0";
+            }
+            catch (Exception up)
+            {
+                return "999";
+            }
+
+        }
+
+        private string returnWorldID(string worldname)
+        {
+            try
+            {
+                for (int i = 0; worldList.Count > i; i++)
+                {
+                    var fields = worldList[i].Split(new Char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                    string world = fields[1];
+                    string version = fields[2];
+
+                    if (world == worldname)
+                    {
+                        return version;
+                    }
+                }
+                return "0";
+            }
+            catch (Exception up)
+            {
+                return "999";
+            }
+
+        }
+
+        private void setupMenu() {
+            try{
+                string line;
+                file = new System.IO.StreamReader("RealityCPWorlds.cfg");
+                while ((line = file.ReadLine()) != null)
+                {
+                    var fields = line.Split(new Char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                    string _world = fields[0];
+                    string _worldbuild = fields[1];
+                    string _worldversion = fields[2];
+                    worldList.Add(_world + "," + _worldbuild + "," + _worldversion);
+                    buildWorldListCombo.DisplayMember = "world";
+                    buildWorldListCombo.ValueMember = "worldbuild";
+                    var item = new MyType { world = _world, worldbuild = _worldbuild, worldversion = _worldversion };
+                    buildWorldListCombo.Items.Add(item); // Add the item
+                    buildWorldListCombo.SelectedIndex = 0; // Selects the first item
+
+                }
+            }
+            catch (Exception up)
+            {
+                throw up;
+            }
+        
+        }
+
+        public void messageHandler(string message)
+        {
+            DateTime dn = DateTime.Now;
+            string currentDate = dn.ToString("dddd dd MMMM");
+            try
+            {
+                var file = new StreamWriter(currentDate + " RealityCP.log", true);
+                file.WriteLine(message);
+                file.Close();
+            }
+            catch (Exception)
+            {
+                var file = new StreamWriter(currentDate + " RealityCP.log", true);
+                file.WriteLine(message);
+                file.Close();
+
+            }
+
+
+
+        }
 
         // Build button
         private void buildBuildBtn_Click(object sender, EventArgs e)
@@ -63,13 +192,48 @@ namespace RealityCP
             if (string.IsNullOrEmpty(buildInstanceText.Text) == false)
             {
                 string worldbuild = "none";
-                switch (buildWorldListCombo.Text)
+                worldbuild = Convert.ToString(buildWorldListCombo.ValueMember);
+                /*switch (buildWorldListCombo.Text)
                 {
+                        
                     case "Chernarus":
                         worldbuild = "chernarus";
                         break;
-                    case "Utes":
-                        worldbuild = "utes";
+                    case "DayZ+":
+                        worldbuild = "dayzplus";
+                        break;
+                    case "Fallujah":
+                        worldbuild = "fallujah";
+                        break;
+                    case "i44.Chernarus":
+                        worldbuild = "i44.chernarus";
+                        break;
+                    case "Isladuala":
+                        worldbuild = "isladuala";
+                        break;
+                    case "Lingor (Skaro)":
+                        worldbuild = "lingor";
+                        break;
+                    case "Celle":
+                        worldbuild = "mbg_celle2";
+                        break;
+                    case "Namalsk":
+                        worldbuild = "namalsk";
+                        break;
+                    case "Oring":
+                        worldbuild = "oring";
+                        break;
+                    case "Panthera Island":
+                        worldbuild = "panthera2";
+                        break;
+                    case "Sahrani":
+                        worldbuild = "sara";
+                        break;
+                    case "Takistan":
+                        worldbuild = "takistan";
+                        break;
+                    case "Taviana":
+                        worldbuild = "tavi";
                         break;
                     case "Thirsk":
                         worldbuild = "thirsk";
@@ -77,25 +241,14 @@ namespace RealityCP
                     case "Thirsk Winter":
                         worldbuild = "thirskw";
                         break;
-                    case "Celle":
-                        worldbuild = "mbg_celle2";
+                    case "Utes":
+                        worldbuild = "utes";
                         break;
-                    case "Lingor (Skaro)":
-                        worldbuild = "lingor";
-                        break;
-                    case "DayZ+":
-                        worldbuild = "dayzplus";
-                        break;
-                    case "Oring":
-                        worldbuild = "oring";
-                        break;
-                    case "Namalsk":
-                        worldbuild = "namalsk";
-                        break;
-                    case "i44.Chernarus":
-                        worldbuild = "i44.chernarus";
-                        break;
-                }
+                    case "Zargabad":
+                        worldbuild = "zargabad";
+                        break;             
+                         
+                }*/
 
                 // Check if world is chosen
                 if (worldbuild != "none")
@@ -109,6 +262,8 @@ namespace RealityCP
                     string ssZeds = "";
                     string wrecks = "";
                     string worldtobuild = "";
+                    string ssZedsMessaging = "";
+                    string serverversion;
                     if (buildPackagesListBox.GetItemChecked(0) == true) buildings = "--with-buildings";
                     if (buildPackagesListBox.GetItemChecked(1) == true) carepkg = "--with-carepkgs";
                     if (buildPackagesListBox.GetItemChecked(2) == true) invcust = "--with-invcust";
@@ -116,33 +271,50 @@ namespace RealityCP
                     if (buildPackagesListBox.GetItemChecked(4) == true) msg = "--with-messaging";
                     if (buildPackagesListBox.GetItemChecked(5) == true) ssZeds = "--with-ssZeds";
                     if (buildPackagesListBox.GetItemChecked(6) == true) wrecks = "--with-wrecks";
-                    if (worldbuild == "mbg_celle2") worldtobuild = "--with-mbg_celle2";
+                    if (buildPackagesListBox.GetItemChecked(7) == true) ssZedsMessaging = "--with-ssZedsMessaging";
+
                     if (worldbuild == "dayzplus") worldtobuild = "--with-dayzplus";
-                    if (worldbuild == "oring") worldtobuild = "--with-oring";
-                    if (worldbuild == "namalsk") worldtobuild = "--with-namalsk";
                     if (worldbuild == "i44.chernarus") worldtobuild = "--with-i44.chernarus";
+
+                    serverversion = returnWorldID(worldbuild);
+                    if (serverversion == "0")
+                    {
+                        MessageBox.Show("World defined was not specified in the data file.");
+                    }
+                    else if (serverversion == "999")
+                    {
+                        MessageBox.Show("There was a problem with the detection, something went wrong.");
+                    }
 
                     // Conflict check between messaging and ssZeds package
                     if (msg == "--with-messaging" & ssZeds == "--with-ssZeds")
                     {
-                        MessageBox.Show("Messaging and ssZeds conflict each other. Please choose one or the other.");
+                        MessageBox.Show("Messaging and ssZeds conflict each other. Please choose the ssZedsMessaging package for both.");
                     }
-                    else if (worldbuild == "i44.chernarus" & buildings == "--with-buildings" | carepkg == "--with-carepkgs" | invcust == "--with-invcust" | killmsg == "--with-killmsgs" | msg == "--with-messaging" | ssZeds == "--with-ssZeds" | wrecks == "--with-wrecks")
-                    {
-                        MessageBox.Show("i44 isn't known to work with any of the current box, this is currently an unsupported feature.");
-                    }
+                    
                     else
                     {
+                        if (worldbuild == "i44.chernarus")
+                        {
+                            if (buildings == "--with-buildings" | carepkg == "--with-carepkgs" | invcust == "--with-invcust" | killmsg == "--with-killmsgs" | msg == "--with-messaging" | ssZeds == "--with-ssZeds" | wrecks == "--with-wrecks" | ssZedsMessaging == "--with-ssZedsMessaging")
+                            {
+                                MessageBox.Show("i44 isn't known to work with any of the current box, use these at your own risk, no support will be given for these until everything has been verified by the Reality team.");
+                            }
+                        }
                         try
                         {
                             // Build
                             System.Diagnostics.Process.Start("CMD.exe", "/C build.pl --clean");
                             System.Threading.Thread.Sleep(1000);
-                            Updates.cmdLine("/C perl build.pl --world " + worldbuild + " " + worldtobuild + " --instance " + buildInstanceText.Text + " " + buildings + " " + carepkg + " " + invcust + " " + killmsg + " " + msg + " " + wrecks + " " + " " + ssZeds);
+                            Updates.cmdLine("/C perl build.pl --world " + worldbuild + " --serverversion " + serverversion + " " + worldtobuild + " --instance " + buildInstanceText.Text + " " + buildings + " " + carepkg + " " + invcust + " " + killmsg + " " + msg + " " + wrecks + " " + " " + ssZeds + " " + ssZedsMessaging);
                         }
                         catch (Exception up)
                         {
                             //throw up; 
+                        }
+                        if (ssZedsMessaging == "--with-ssZedsMessaging" | msg == "--with-messaging")
+                        {
+                            MessageBox.Show("Make sure you have imported the messaging schema or the database will crash.");
                         }
                     }
                 }

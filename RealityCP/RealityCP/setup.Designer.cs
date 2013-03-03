@@ -36,6 +36,7 @@
             this.setupDatabaseBtn = new System.Windows.Forms.Button();
             this.setupBackBtn = new System.Windows.Forms.Button();
             this.setupUpdateBtn = new System.Windows.Forms.Button();
+            this.updateBansbtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -59,7 +60,7 @@
             // 
             // setupSetupPerlBtn
             // 
-            this.setupSetupPerlBtn.Location = new System.Drawing.Point(83, 82);
+            this.setupSetupPerlBtn.Location = new System.Drawing.Point(81, 61);
             this.setupSetupPerlBtn.Name = "setupSetupPerlBtn";
             this.setupSetupPerlBtn.Size = new System.Drawing.Size(115, 23);
             this.setupSetupPerlBtn.TabIndex = 9;
@@ -69,7 +70,7 @@
             // 
             // setupMyqlBtn
             // 
-            this.setupMyqlBtn.Location = new System.Drawing.Point(83, 111);
+            this.setupMyqlBtn.Location = new System.Drawing.Point(81, 90);
             this.setupMyqlBtn.Name = "setupMyqlBtn";
             this.setupMyqlBtn.Size = new System.Drawing.Size(115, 23);
             this.setupMyqlBtn.TabIndex = 10;
@@ -79,7 +80,7 @@
             // 
             // setupDatabaseBtn
             // 
-            this.setupDatabaseBtn.Location = new System.Drawing.Point(83, 140);
+            this.setupDatabaseBtn.Location = new System.Drawing.Point(81, 119);
             this.setupDatabaseBtn.Name = "setupDatabaseBtn";
             this.setupDatabaseBtn.Size = new System.Drawing.Size(115, 23);
             this.setupDatabaseBtn.TabIndex = 11;
@@ -99,7 +100,7 @@
             // 
             // setupUpdateBtn
             // 
-            this.setupUpdateBtn.Location = new System.Drawing.Point(83, 169);
+            this.setupUpdateBtn.Location = new System.Drawing.Point(81, 148);
             this.setupUpdateBtn.Name = "setupUpdateBtn";
             this.setupUpdateBtn.Size = new System.Drawing.Size(115, 23);
             this.setupUpdateBtn.TabIndex = 13;
@@ -107,11 +108,22 @@
             this.setupUpdateBtn.UseVisualStyleBackColor = true;
             this.setupUpdateBtn.Click += new System.EventHandler(this.setupUpdateBtn_Click);
             // 
+            // updateBansbtn
+            // 
+            this.updateBansbtn.Location = new System.Drawing.Point(81, 176);
+            this.updateBansbtn.Name = "updateBansbtn";
+            this.updateBansbtn.Size = new System.Drawing.Size(115, 23);
+            this.updateBansbtn.TabIndex = 14;
+            this.updateBansbtn.Text = "Update Bans";
+            this.updateBansbtn.UseVisualStyleBackColor = true;
+            this.updateBansbtn.Click += new System.EventHandler(this.updateBansbtn_Click);
+            // 
             // setup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.updateBansbtn);
             this.Controls.Add(this.setupUpdateBtn);
             this.Controls.Add(this.setupBackBtn);
             this.Controls.Add(this.setupDatabaseBtn);
@@ -141,5 +153,6 @@
         private System.Windows.Forms.Button setupDatabaseBtn;
         private System.Windows.Forms.Button setupBackBtn;
         private System.Windows.Forms.Button setupUpdateBtn;
+        private System.Windows.Forms.Button updateBansbtn;
     }
 }
