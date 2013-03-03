@@ -73,17 +73,6 @@
             // 
             this.buildWorldListCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.buildWorldListCombo.FormattingEnabled = true;
-            this.buildWorldListCombo.Items.AddRange(new object[] {
-            "Celle",
-            "Chernarus",
-            "i44.Chernarus",
-            "Lingor (Skaro)",
-            "Namalsk",
-            "Oring",
-            "Thirsk",
-            "Thirsk Winter",
-            "Utes",
-            ""});
             this.buildWorldListCombo.Location = new System.Drawing.Point(76, 68);
             this.buildWorldListCombo.Name = "buildWorldListCombo";
             this.buildWorldListCombo.Size = new System.Drawing.Size(174, 21);
@@ -125,8 +114,9 @@
             "Custom Inventory",
             "Killmessages",
             "Messaging",
-            "Disable server zombies",
-            "Wrecks"});
+            "Disable server zombies(ssZeds)",
+            "Wrecks",
+            "ssZedsMessaging"});
             this.buildPackagesListBox.Location = new System.Drawing.Point(76, 124);
             this.buildPackagesListBox.Name = "buildPackagesListBox";
             this.buildPackagesListBox.Size = new System.Drawing.Size(174, 49);
