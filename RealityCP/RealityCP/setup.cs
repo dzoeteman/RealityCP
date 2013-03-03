@@ -74,5 +74,11 @@ namespace RealityCP
             form2.Show();
             this.Hide();
         }
+
+        private void updateBansbtn_Click(object sender, EventArgs e)
+        {
+            Updates.cmdLine("/C perl update_bans.pl --banz --cbl --dwarden --mybans mybanz.txt --verbose --save ./util/dayz_config/Battleye/bans.txt ");
+            MessageBox.Show("Ban files are updated. Rebuild your server package to get the filters.");
+        }
     }
 }

@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.menuExitBtn = new System.Windows.Forms.Button();
+            this.helpBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // menuBuildBtn
@@ -119,6 +120,16 @@
             this.menuExitBtn.UseVisualStyleBackColor = true;
             this.menuExitBtn.Click += new System.EventHandler(this.menuExitBtn_Click);
             // 
+            // helpBtn
+            // 
+            this.helpBtn.Location = new System.Drawing.Point(88, 54);
+            this.helpBtn.Name = "helpBtn";
+            this.helpBtn.Size = new System.Drawing.Size(109, 23);
+            this.helpBtn.TabIndex = 8;
+            this.helpBtn.Text = "OMG I need Help!";
+            this.helpBtn.UseVisualStyleBackColor = true;
+            this.helpBtn.Click += new System.EventHandler(this.helpBtn_Click);
+            // 
             // menu
             // 
             this.AccessibleDescription = "";
@@ -126,6 +137,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.helpBtn);
             this.Controls.Add(this.menuExitBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -158,5 +170,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button menuExitBtn;
+        private System.Windows.Forms.Button helpBtn;
     }
 }

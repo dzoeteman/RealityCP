@@ -90,5 +90,10 @@ namespace RealityCP
 
         }
 
+        private void helpBtn_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.teamspeak.com/invite/teamspeak.hngamers.com");
+        }
+
     }
 }
