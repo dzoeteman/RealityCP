@@ -62,6 +62,11 @@ namespace RealityCP
             public string world { get; set; }
             public string worldbuild { get; set; }
             public string worldversion { get; set; }
+
+            public override string ToString()
+            {
+                return worldbuild;
+            }
         }
 
 
@@ -137,10 +142,13 @@ namespace RealityCP
 
         }
 
+        private MyType item;
         private void setupMenu() {
             try{
                 string line;
                 file = new System.IO.StreamReader("RealityCPWorlds.cfg");
+                buildWorldListCombo.DisplayMember = "world";
+                buildWorldListCombo.ValueMember = "worldbuild";
                 while ((line = file.ReadLine()) != null)
                 {
                     var fields = line.Split(new Char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
@@ -148,9 +156,7 @@ namespace RealityCP
                     string _worldbuild = fields[1];
                     string _worldversion = fields[2];
                     worldList.Add(_world + "," + _worldbuild + "," + _worldversion);
-                    buildWorldListCombo.DisplayMember = "world";
-                    buildWorldListCombo.ValueMember = "worldbuild";
-                    var item = new MyType { world = _world, worldbuild = _worldbuild, worldversion = _worldversion };
+                    item = new MyType { world = _world, worldbuild = _worldbuild, worldversion = _worldversion };
                     buildWorldListCombo.Items.Add(item); // Add the item
                     buildWorldListCombo.SelectedIndex = 0; // Selects the first item
 
@@ -192,63 +198,9 @@ namespace RealityCP
             if (string.IsNullOrEmpty(buildInstanceText.Text) == false)
             {
                 string worldbuild = "none";
-                worldbuild = Convert.ToString(buildWorldListCombo.ValueMember);
-                /*switch (buildWorldListCombo.Text)
-                {
-                        
-                    case "Chernarus":
-                        worldbuild = "chernarus";
-                        break;
-                    case "DayZ+":
-                        worldbuild = "dayzplus";
-                        break;
-                    case "Fallujah":
-                        worldbuild = "fallujah";
-                        break;
-                    case "i44.Chernarus":
-                        worldbuild = "i44.chernarus";
-                        break;
-                    case "Isladuala":
-                        worldbuild = "isladuala";
-                        break;
-                    case "Lingor (Skaro)":
-                        worldbuild = "lingor";
-                        break;
-                    case "Celle":
-                        worldbuild = "mbg_celle2";
-                        break;
-                    case "Namalsk":
-                        worldbuild = "namalsk";
-                        break;
-                    case "Oring":
-                        worldbuild = "oring";
-                        break;
-                    case "Panthera Island":
-                        worldbuild = "panthera2";
-                        break;
-                    case "Sahrani":
-                        worldbuild = "sara";
-                        break;
-                    case "Takistan":
-                        worldbuild = "takistan";
-                        break;
-                    case "Taviana":
-                        worldbuild = "tavi";
-                        break;
-                    case "Thirsk":
-                        worldbuild = "thirsk";
-                        break;
-                    case "Thirsk Winter":
-                        worldbuild = "thirskw";
-                        break;
-                    case "Utes":
-                        worldbuild = "utes";
-                        break;
-                    case "Zargabad":
-                        worldbuild = "zargabad";
-                        break;             
-                         
-                }*/
+
+                //worldbuild = buildWorldListCombo.SelectedValue.ToString();
+                worldbuild = (buildWorldListCombo.SelectedItem as MyType).worldbuild;
 
                 // Check if world is chosen
                 if (worldbuild != "none")
