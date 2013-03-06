@@ -227,6 +227,7 @@ namespace RealityCP
 
                     if (worldbuild == "dayzplus") worldtobuild = "--with-dayzplus";
                     if (worldbuild == "i44.chernarus") worldtobuild = "--with-i44.chernarus";
+                    if (worldbuild == "dayz2017") worldtobuild = "--with-dayz2017";
 
                     serverversion = returnWorldID(worldbuild);
                     if (serverversion == "0")
@@ -246,11 +247,11 @@ namespace RealityCP
                     
                     else
                     {
-                        if (worldbuild == "i44.chernarus")
+                        if (worldbuild == "i44.chernarus" || worldbuild == "dayz2017")
                         {
                             if (buildings == "--with-buildings" | carepkg == "--with-carepkgs" | invcust == "--with-invcust" | killmsg == "--with-killmsgs" | msg == "--with-messaging" | ssZeds == "--with-ssZeds" | wrecks == "--with-wrecks" | ssZedsMessaging == "--with-ssZedsMessaging")
                             {
-                                MessageBox.Show("i44 isn't known to work with any of the current box, use these at your own risk, no support will be given for these until everything has been verified by the Reality team.");
+                                MessageBox.Show("This mod isn't known to work with any of the current packages, use these at your own risk, no support will be given for these until everything has been verified by the Reality team.");
                             }
                         }
                         try

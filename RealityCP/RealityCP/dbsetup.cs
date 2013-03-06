@@ -70,6 +70,9 @@ namespace RealityCP
                 case "Namalsk":
                     Updates.cmdLine("/C perl db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityNamalsk --version 0.01");
                     break;
+                case "DayZ2017":
+                    Updates.cmdLine("/C perl db_migrate.pl --host " + Config.hostMySQL + " --user " + Config.userMySQL + " --pass " + Config.passMySQL + " --name " + Config.nameMySQL + " --port " + Config.portMySQL + " --schema RealityDayz2017 --version 0.01");
+                    break;
                 default:
                     MessageBox.Show("No option selected.");
                     break;
@@ -105,6 +108,9 @@ namespace RealityCP
                     break;
                 case "Namalsk":
                     worldadd = "namalsk";
+                    break;
+                case "DayZ2017":
+                    worldadd = "dayz2017";
                     break;
                 default:
                     MessageBox.Show("No option selected.");

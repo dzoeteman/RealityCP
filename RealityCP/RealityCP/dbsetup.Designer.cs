@@ -104,7 +104,8 @@
             "Thirsk",
             "Thirsk Winter",
             "Namalsk",
-            "Oring"});
+            "Oring",
+            "DayZ2017"});
             this.importSchemaList.Location = new System.Drawing.Point(91, 86);
             this.importSchemaList.Name = "importSchemaList";
             this.importSchemaList.Size = new System.Drawing.Size(100, 21);
@@ -178,7 +179,8 @@
             "Lingor (Skaro)",
             "Oring",
             "Namalsk",
-            "DayZ+"});
+            "DayZ+",
+            "DayZ2017"});
             this.addInstanceList.Location = new System.Drawing.Point(91, 113);
             this.addInstanceList.Name = "addInstanceList";
             this.addInstanceList.Size = new System.Drawing.Size(100, 21);
